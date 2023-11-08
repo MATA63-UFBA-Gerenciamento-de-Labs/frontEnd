@@ -9,10 +9,7 @@
 .mini{
 
     flex-shrink: 0;
-<<<<<<< HEAD
     color: var(--gray-gray-80, #333);
-=======
->>>>>>> b633d64b11e6fc363c4899f9ef46bd44634fc565
     font-variant-numeric: lining-nums proportional-nums;
     font-family: Rawline;
     font-size: 11px;
@@ -22,10 +19,6 @@
 }
 
 .big{
-<<<<<<< HEAD
-    color: var(--pure-pure-100, #000);
-=======
->>>>>>> b633d64b11e6fc363c4899f9ef46bd44634fc565
     font-variant-numeric: lining-nums proportional-nums;
     font-family: Rawline;
     font-size: 16px;
