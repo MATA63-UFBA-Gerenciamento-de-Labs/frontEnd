@@ -1,7 +1,7 @@
 import Image from 'next/image'
-import { Header } from '../components/topbar/topbar.jsx'
-import { Table } from '../components/table/table.jsx'
-import { Lab } from '../components/lab/lab.jsx'
+import Header from '../components/topbar/topbar.jsx'
+import Table from '../components/table/table.jsx'
+import Lab from '../components/lab/lab.jsx'
 
 import miniuser from '../assets/miniuser.svg'
 import pen from '../assets/pen.svg'

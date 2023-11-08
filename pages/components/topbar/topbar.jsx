@@ -4,7 +4,9 @@ import userIcon from '../../assets/avatar.svg';
 import styles from './topbar.module.css'
 
 
-export function Header(){
+
+export default function Header(){
+
     return(
         <header className={styles.Header}>
             <div className={styles.titleHeader}>
