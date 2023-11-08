@@ -13,12 +13,17 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.16",
+    "@mui/material": "^5.14.17",
     "next": "^13.1.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "jest": "^29.6.2",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "typescript": "5.2.2"
   }
 }
