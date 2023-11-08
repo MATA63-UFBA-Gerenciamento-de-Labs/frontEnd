@@ -17,6 +17,8 @@ export function LoginInput(props: LoginInputProps): React.ReactElement {
           paddingLeft: "16px",
           height: "40px",
           width: "384px",
+          marginBottom: "8px",
+          marginTop: "4px",
         },
         autoComplete: "off",
         startAdornment: (
