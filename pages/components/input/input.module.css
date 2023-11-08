@@ -1,0 +1,65 @@
+.selectBox{
+    
+    width: 200px;
+    overflow: hidden;
+    border: 1px solid #000;
+    position: relative;
+    padding: 10px 0;
+    border-radius: 4px;
+    border: 1px solid var(--gray-gray-40, #888);
+    background: var(--pure-pure, #FFF);
+}
+
+.selectBox select{
+    padding-left: 16px;
+}
+.selectBox:after{
+    width: 0; 
+    height: 0; 
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #1351B4;
+    position: absolute;
+    top: 40%;
+    right: 5px;
+    content: "";
+    z-index: 98;
+}
+.selectBox select{
+    width: 220px;
+    border: 0;
+    position: relative;
+    z-index: 99;
+    background: none;
+}
+
+.input{
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+    
+}
+
+
+.title{
+    color: var(--pure-pure-100, #000);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Rawline;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    
+    margin: 0;
+}
+
+.inputA{
+    height: 40px;
+    border-radius: 4px;
+    border: 1px solid var(--gray-gray-40, #888);
+    background: var(--pure-pure, #FFF);
+    padding-left: 16px;
+}

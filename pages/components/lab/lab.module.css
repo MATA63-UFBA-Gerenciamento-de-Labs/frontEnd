@@ -1,0 +1,30 @@
+.lab{
+
+    display: flex;
+    flex-direction: column;
+    height: 51px;
+    padding-top: 12px;
+}
+
+.mini{
+
+    flex-shrink: 0;
+    color: var(--gray-gray-80, #333);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Rawline;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.big{
+    color: var(--pure-pure-100, #000);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Rawline;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
