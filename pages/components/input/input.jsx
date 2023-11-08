@@ -6,17 +6,17 @@ function returnType(title, placeholder, type){
         return(
             <>
                 <p className={styles.title}>{title}</p>
-                <input type="text" placeholder={placeholder| ""} className={styles.inputA}/>
+                <input type="text" placeholder={placeholder} className={styles.inputA}/>
             </>
         );    
     }
     else{
         return(
             <>
-                <p className={styles.title}>{title| ""}</p>
+                <p className={styles.title}>{title}</p>
                 <div className={styles.selectBox}>
                     <select defaultValue='default'>
-                        <option className={styles.gray} value='default' disabled>{placeholder| ""}</option>
+                        <option className={styles.gray} value='default' disabled>{placeholder}</option>
                         <option>Test</option>
                     </select>
                 </div>
