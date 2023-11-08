@@ -10,7 +10,7 @@ function Days( days ){
     return s;
 }
 
-export function Lab( {days, hour, number, clas, color} ){
+export default function Lab( {days, hour, number, clas, color} ){
     return(
         <div className={styles.lab}>
             <span className={styles.mini} style={{color: color? color : "#333"}}>{Days(days)} | {hour}</span>

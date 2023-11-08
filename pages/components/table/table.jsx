@@ -45,7 +45,7 @@ function createActions(){
 
 }
 
-export function Table( {params, data, actions} ){
+export default function Table( {params, data, actions} ){
     return(
         <div className={styles.table}>
             <div className={styles.header}>
