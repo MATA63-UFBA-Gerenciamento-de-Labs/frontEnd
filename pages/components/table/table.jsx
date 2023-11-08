@@ -41,7 +41,11 @@ function createEntrys(params, data){
     return ar.map(e => <div className={styles.entryData}> {e} </div>);
 }
 
-export function Table( {params, data} ){
+function createActions(){
+
+}
+
+export function Table( {params, data, actions} ){
     return(
         <div className={styles.table}>
             <div className={styles.header}>
@@ -49,6 +53,9 @@ export function Table( {params, data} ){
             </div>
             <div className={styles.data}>
                 {createEntrys( params, data )}
+            </div>
+            <div className={styles.actions}>
+                {actions}
             </div>
         </div>
     );

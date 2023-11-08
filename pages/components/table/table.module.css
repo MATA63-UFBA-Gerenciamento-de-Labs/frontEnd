@@ -61,3 +61,15 @@
     border: 1px solid var(--gray-gray-20, #CCC);
     background: var(--pure-pure, #FFF);
 }
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    gap:8px;
+    justify-content: flex-end;
+    padding: 12px 12px;
+}
+
+.data{
+    border-bottom: 1px solid gray;
+}
