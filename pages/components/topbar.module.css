@@ -1,0 +1,34 @@
+.Header{
+    width: 100%;
+    height: 60px;
+
+    box-shadow: 0px 7px 6px -5px rgba(51, 51, 51, 0.16);
+
+    display: flex;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.titleHeader{
+    margin-left: 50px;
+
+    display: flex;
+    align-items: center;
+
+    color: #000;
+    font-family: Rawline;
+    font-size: 20.16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+
+}
+.userOptions{
+    height: 100%;
+
+    margin-right: 40px;
+
+    display: flex;
+    align-items: center;
+}
