@@ -1,3 +1,7 @@
 import Login from "./login/page";
 
-export default Login;
+function Home() {
+  return <Login />;
+}
+
+export default Home;

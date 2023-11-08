@@ -25,7 +25,6 @@ function Login(): React.ReactElement {
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
-
           padding: "28px 24px",
         }}
       >
