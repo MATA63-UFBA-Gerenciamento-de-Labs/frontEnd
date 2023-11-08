@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import userIcon from '../assets/avatar.svg';
+import userIcon from '../../assets/avatar.svg';
 
 import styles from './topbar.module.css'
 
