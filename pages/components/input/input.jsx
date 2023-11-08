@@ -27,10 +27,13 @@ function returnType(title, placeholder, type){
 
 
 // type = 0 -> text,  type = 1 -> select
-export function Input( {title, placeholder, type} ){
+
+export default function Input( {title, placeholder, type} ){
+
     return(
         <div className={styles.input}>
             {returnType( title, placeholder, type )}
         </div>
     );
+
 }

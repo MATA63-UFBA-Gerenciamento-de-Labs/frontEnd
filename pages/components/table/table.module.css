@@ -1,0 +1,75 @@
+.header{
+    display: flex;
+    padding-left: 48px;
+    box-sizing: border-box;
+    background: var(--gray-gray-05, #F0F0F0);
+    
+}
+
+.param{
+    box-sizing: border-box;
+    height: 56px;
+    padding: 16px 12px;
+    gap: 8px;
+    flex: 1 0 0;
+    background: var(--gray-gray-05, #F0F0F0);
+    color: var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Rawline;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.param:hover{
+    background: linear-gradient(0deg, rgba(19, 81, 180, 0.16) 0%, rgba(19, 81, 180, 0.16) 100%), #FFF;
+}
+
+.entryData{
+    box-sizing: border-box;
+    height: 56px;
+    display: flex;
+}
+
+.entryDataParam{
+    display: flex;
+    padding: 0px 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1 0 0;
+    align-self: stretch;
+}
+
+.squareDiv{
+    box-sizing: border-box;
+    display: flex;
+    width: 48px;
+    padding: 0px 12px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.squareDiv input{
+    box-sizing: border-box;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--gray-gray-20, #CCC);
+    background: var(--pure-pure, #FFF);
+}
+
+.actions{
+    display: flex;
+    flex-direction: row;
+    gap:8px;
+    justify-content: flex-end;
+    padding: 12px 12px;
+}
+
+.data{
+    border-bottom: 1px solid gray;
+}
