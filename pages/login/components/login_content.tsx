@@ -10,6 +10,9 @@ type LoginContentProps = {
 };
 
 function LoginContent(props: LoginContentProps): React.ReactElement {
+  if( !props){
+    return(<div>erro</div>);
+  }
   return (
     <div
       style={{

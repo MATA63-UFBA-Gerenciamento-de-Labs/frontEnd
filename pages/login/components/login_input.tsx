@@ -7,6 +7,9 @@ type LoginInputProps = TextFieldProps & {
 };
 
 function LoginInput(props: LoginInputProps): React.ReactElement {
+  if( !props){
+    return(<div>erro</div>);
+  }
   const textFieldProps = { ...props };
   return (
     <TextField
