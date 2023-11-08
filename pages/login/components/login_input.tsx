@@ -1,15 +1,15 @@
 import React from "react";
 import { InputAdornment, TextField, TextFieldProps } from "@mui/material";
 import { Visibility, SvgIconComponent } from "@mui/icons-material";
+import { Lock } from "@mui/icons-material";
 
 type LoginInputProps = TextFieldProps & {
   icon: SvgIconComponent;
 };
 
 function LoginInput(props: LoginInputProps): React.ReactElement {
-  if( !props){
-    return(<div>erro</div>);
-  }
+  props = {icon: props.icon || Lock };
+  
   const textFieldProps = { ...props };
   return (
     <TextField

@@ -1,6 +1,7 @@
 import { SvgIconComponent } from "@mui/icons-material";
 import React from "react";
 import LoginInput from "./login_input";
+import { Lock } from "@mui/icons-material";
 
 type LoginContentProps = {
   label: string;
@@ -10,9 +11,12 @@ type LoginContentProps = {
 };
 
 function LoginContent(props: LoginContentProps): React.ReactElement {
-  if( !props){
-    return(<div>erro</div>);
-  }
+  props = {
+            label: props.label || "",
+            footer: props.footer || "",
+            icon: props.icon || Lock,
+            placeholder: props.placeholder || "",
+          } 
   return (
     <div
       style={{
