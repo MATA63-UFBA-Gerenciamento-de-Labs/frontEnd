@@ -49,10 +49,10 @@ export default function Table( {params, data, actions} ){
     return(
         <div className={styles.table}>
             <div className={styles.header}>
-                {createHeader( params )}
+                {createHeader( params || [] )}
             </div>
             <div className={styles.data}>
-                {createEntrys( params, data )}
+                {createEntrys( params || [], data || [] )}
             </div>
             <div className={styles.actions}>
                 {actions}
