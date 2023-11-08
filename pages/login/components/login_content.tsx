@@ -1,6 +1,6 @@
 import { SvgIconComponent } from "@mui/icons-material";
 import React from "react";
-import { LoginInput } from "./login_input";
+import LoginInput from "./login_input";
 
 type LoginContentProps = {
   label: string;
@@ -9,7 +9,7 @@ type LoginContentProps = {
   placeholder: string;
 };
 
-export function LoginContent(props: LoginContentProps): React.ReactElement {
+function LoginContent(props: LoginContentProps): React.ReactElement {
   return (
     <div
       style={{
@@ -45,3 +45,5 @@ export function LoginContent(props: LoginContentProps): React.ReactElement {
     </div>
   );
 }
+
+export default LoginContent;

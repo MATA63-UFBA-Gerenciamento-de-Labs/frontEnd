@@ -1,9 +1,9 @@
 import React from "react";
 import { Person, Lock } from "@mui/icons-material";
 import { Button } from "@mui/material";
-import { LoginContent } from "./components/login_content";
 import LoginButton from "./components/login_button";
 import FooterButtons from "./components/footer_buttons";
+import LoginContent from "./components/login_content";
 
 function Login(): React.ReactElement {
   return (

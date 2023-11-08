@@ -6,7 +6,7 @@ type LoginInputProps = TextFieldProps & {
   icon: SvgIconComponent;
 };
 
-export function LoginInput(props: LoginInputProps): React.ReactElement {
+function LoginInput(props: LoginInputProps): React.ReactElement {
   const textFieldProps = { ...props };
   return (
     <TextField
@@ -36,3 +36,5 @@ export function LoginInput(props: LoginInputProps): React.ReactElement {
     />
   );
 }
+
+export default LoginInput;
