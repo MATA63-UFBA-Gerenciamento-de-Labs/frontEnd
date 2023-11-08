@@ -4,10 +4,10 @@ import book from '../assets/book.svg';
 import cartao from '../assets/cartao.svg';
 import pc from '../assets/pc.svg';
 import back from '../assets/back.svg';
-import { Header } from '../components/topbar/topbar.jsx'
-import { Input } from '../components/input/input.jsx'
-import { Lab } from '../components/lab/lab.jsx'
-import { History } from '../components/history/history.jsx'
+import Header from '../components/topbar/topbar.jsx'
+import Input from '../components/input/input.jsx'
+import  Lab  from '../components/lab/lab.jsx'
+import History from '../components/history/history.jsx'
 import styles from './telaAluno.module.css'
 
 export default function index(){
