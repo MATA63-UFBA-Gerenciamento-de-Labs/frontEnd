@@ -1,0 +1,16 @@
+.cardTitle{
+    margin-bottom: 23px;
+    display: flex;
+}
+
+.cardTitle h3{
+    margin: 0;
+    margin-left: 17px;
+    color: var(--pure-pure-100, #000);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Rawline;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

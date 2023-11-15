@@ -117,6 +117,10 @@ export default function index(){
                 <div className={styles.ar}>
                     <div className={styles.Table}>
                         <Table 
+                            title = {"Solicitações de Tag"}
+
+                            titleImage = {<Image width={15} height={19} src={miniuser} alt='miniuser' />}
+
                             params={params}
 
                             data={data}
@@ -146,9 +150,9 @@ export default function index(){
                         <div className={styles.labs}>
                             
                         <a href="" className={styles.bot}>
-                                <Image width={20} height={22} src={prancheta} alt='prancheta' />
-                                <div className={styles.divSpan}><span>Gerar Relatório </span></div>
-                            </a>  
+                            <Image width={20} height={22} src={prancheta} alt='prancheta' />
+                            <div className={styles.divSpan}><span>Gerar Relatório </span></div>
+                        </a>  
                             
                         </div>
                     </div>
@@ -163,6 +167,10 @@ export default function index(){
             <div className={styles.center}>
                 <div className={styles.Table2}>
                     <Table 
+                        title = {"Usuários Cadastrados"}
+
+                        titleImage = {<Image width={15} height={19} src={miniuser} alt='miniuser' />}
+
                         params={params2}
 
                         data={data2}
@@ -180,6 +188,10 @@ export default function index(){
             <div className={styles.center}>
                 <div className={styles.Table2}>
                     <Table 
+                        title = {"Laboratórios"}
+
+                        titleImage = {<Image width={15} height={19} src={miniuser} alt='miniuser' />}
+                        
                         params={params3}
 
                         data={data3}

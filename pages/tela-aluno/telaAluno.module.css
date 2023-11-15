@@ -18,104 +18,11 @@
     margin-bottom: 28px;
 }
 
-.card{
-    width: 790px;
-    height: 306px;
-    padding-left: 16px;
-    padding-top: 16px;
-    flex-shrink: 0;
-    margin-left: 2.5%;
-    margin-bottom: 32px;
-    box-shadow: 0px 1px 6px 0px rgba(51, 51, 51, 0.16);
-}
-
-.cardTitle{
-    margin-bottom: 23px;
-    display: flex;
-}
-
-.cardTitle h3{
-    margin: 0;
-    margin-left: 17px;
-    color: var(--pure-pure-100, #000);
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: Rawline;
-    font-size: 16.8px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-}
-
-.cardInputs{
-    width: 701px;
-    height: 178px;
-    flex-shrink: 0;
-    background-color: #F8F8F8;
-    padding: 26px;
-
-    margin-left: 5px;
-}
-
-.firstRowCard{
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 26px;
-}
-
-.secondRowCard{
-    display: flex;
-    justify-content: space-between;
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-
-.buttons{
-    margin-top: 23px;
-    width: 252px;
-    display: flex;
-    justify-content: space-between;
-    
-}
-
-
-.dois{
-    display: flex;
-    justify-content: flex-end;
-}
-
-.buttonImproviso{
-    margin-top: 23px;
-}
-
-.cardTres{
-    height: 226px;
-}
-
-.cardInputsTres{
-    height: 98px;
-}
-
-.inputsDiv{
+.mainCards{
     margin-right: 27px;
 }
 
 .center{
     margin-left: 1.5%;
     display: flex;
-}
-
-.infoCard{
-    width: 383px;
-    height: 306px;
-    padding-left: 16px;
-    padding-top: 16px;
-    flex-shrink: 0;
-    margin-left: 2.5%;
-    margin-bottom: 32px;
-    box-shadow: 0px 1px 6px 0px rgba(51, 51, 51, 0.16);
-}
-
-.labs{
-    padding-left: 15px;
 }

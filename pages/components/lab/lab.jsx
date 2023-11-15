@@ -10,9 +10,9 @@ function Days( days ){
     return s;
 }
 
-export default function Lab( {days, hour, number, clas, color} ){
+export default function Lab( {days, hour, number, clas, color, cla} ){
     return(
-        <div className={styles.lab}>
+        <div className={`${styles.lab} ${cla ? styles[cla] : ""}`}>
             <span className={styles.mini} style={{color: color? color : "#333"}}>{Days(days || [])} | {hour}</span>
             <span className={styles.big}  style={{color: color? color : "#000"}}>{number}, {clas}</span>
 

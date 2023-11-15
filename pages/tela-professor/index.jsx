@@ -10,6 +10,8 @@ import hammer from '../assets/hammer.svg'
 import prancheta from '../assets/prancheta.svg'
 import pc from '../assets/pc.svg';
 import styles from './telaProfessor.module.css'
+import SideCard from '../components/sideCard/sideCard.jsx'
+import Action from '../components/action/action.jsx'
 
 export default function index(){
 
@@ -47,6 +49,33 @@ export default function index(){
         />,
     ];
 
+    var info1 =[
+        <Action 
+            image={<Image width={23} height={25} src={hammer} alt='hammer' />}
+            info={<span>Solicitar Reparo de Laboratório</span>} 
+        />,
+        <div className={styles.line}></div>,
+        <Action
+            image={<Image width={20} height={22} src={prancheta} alt='prancheta' />}
+            info={<span>Gerar Presença de Aula</span>}
+        />
+    ]
+
+    var info2 = [
+        <Action 
+            image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
+            info ={<Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"} cla={"action"}/>}
+        />,
+        <Action 
+            image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
+            info ={<Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"} cla={"action"}/>}
+        />,
+        <Action 
+            image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
+            info ={<Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"} cla={"action"}/>}
+        />,
+    ]
+
     return(
         
         <div className="tela-professor">
@@ -71,55 +100,20 @@ export default function index(){
                         actions={actions}
                     />
                 </div>
-                <div className={styles.right}>
-                    <div className={styles.infoCard}>
-                        <div className={styles.cardTitle}> 
-                            <Image width={17} height={19} src={pen} alt='pen' />
-                            <h3>Outras Ações</h3>
-                        </div>
-                        <div className={styles.otherActions}>
-                            <a href="" className={styles.top}>
-                                <Image width={23} height={25} src={hammer} alt='hammer' />
-                                <div className={styles.divSpan}><span>Solicitar Reparo de Laboratório</span></div>
-                            </a>
-                            <div className={styles.line}></div>
-                            <a href="" className={styles.bot}>
-                                <Image width={20} height={22} src={prancheta} alt='prancheta' />
-                                <div className={styles.divSpan}><span>Gerar Presença de Aula</span></div>
-                            </a>  
-                        </div>
-                    </div>
+                <div className={styles.sideCards}>
+                    <SideCard
+                        titleText={"Outras Ações"}
+                        titleImage={<Image width={17} height={19} src={pen} alt='pen' />}
+                        info={info1}
+                        clas={"action"}
+                    />
 
-                    <div className={styles.infoCard}>
-                        <div className={styles.cardTitle}> 
-                            <Image width={15} height={19} src={pc} alt='pc' />
-                            <h3>Meus Laboratórios</h3>
-                        </div>
-                        <div className={styles.labs}>
-                            
-                            <a href="" className={styles.labsA}>
-                                <div className={styles.labsDivImage}>
-                                    <Image width={20} height={22} src={prancheta} alt='prancheta' />
-                                </div>
-                                <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"}/>
-                            </a>
-                            
-                            <a href="" className={styles.labsA}>
-                                <div className={styles.labsDivImage}>
-                                    <Image width={20} height={22} src={prancheta} alt='prancheta' />
-                                </div>
-                                <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"}/>
-                            </a>
-
-                            <a href="" className={styles.labsA}>
-                                <div className={styles.labsDivImage}>
-                                    <Image width={20} height={22} src={prancheta} alt='prancheta' />
-                                </div>
-                                <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"}/>
-                            </a>
-
-                        </div>
-                    </div>
+                    <SideCard
+                        titleText={"Meus Laboratórios"}
+                        titleImage={<Image width={15} height={19} src={pc} alt='pc' />}
+                        info={info2}
+                        clas={"action"}
+                    />
                 </div>
             </div>
         </div>
