@@ -35,10 +35,10 @@ function createEntrys(params, data){
             )
         });
 
-        ar.push(entry);
+        ar.push( <div id={e.id} className={styles.entryData}> {entry} </div> )
     });
 
-    return ar.map(e => <div className={styles.entryData}> {e} </div>);
+    return ar;
 }
 
 function createActions(){

@@ -78,48 +78,6 @@
     
 }
 
-.whiteButton{
-    display: inline-flex;
-    height: 24px;
-    width: 56px;
-    padding: 8px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    border: 1px solid var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
-    background: var(--pure-pure, #FFF);
-    color: var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
-    text-align: center;
-    font-family: Rawline;
-    font-size: 16.8px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    cursor: pointer;
-}
-
-.blueButton{
-    display: inline-flex;
-    height: 24px;
-    width: 79px;
-    padding: 8px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
-    color: var(--pure-pure, #FFF);
-    text-align: center;
-    font-family: Rawline;
-    font-size: 16.8px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    cursor: pointer;
-}
 
 .dois{
     display: flex;

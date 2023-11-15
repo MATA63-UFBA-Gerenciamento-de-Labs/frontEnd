@@ -1,8 +1,10 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import Header from '../components/topbar/topbar.jsx'
 import Table from '../components/table/table.jsx'
 import Lab from '../components/lab/lab.jsx'
 import History from '../components/history/history.jsx'
+import Button from '../components/button/button.jsx'
 
 import miniuser from '../assets/miniuser.svg'
 import pen from '../assets/pen.svg'
@@ -37,40 +39,64 @@ export default function index(){
         {display:"Ocupação", atribute:"ocupation"},
     ];
 
-    var data = [
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"1", type:"Estudo"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"2", type:"Aula"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"3", type:"Aula"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"4", type:"Estudo"},
-    ];
+    var [data,setData]= useState([
+        {id:1,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"1", type:"Estudo"},
+        {id:2,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"2", type:"Aula"},
+        {id:3,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"3", type:"Aula"},
+        {id:4,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"4", type:"Estudo"},
+    ]);
 
-    var data2 = [
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Aluno",       disc:"Lorem ipsum",                           lab:"1"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Professor",   disc:"Lorem ipsum, Lorem ipsum, Lorem ipsum", lab:"11"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Aluno",       disc:"Lorem ipsum, Lorem ipsum",              lab:"111"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Professor",   disc:"Lorem ipsum",                           lab:"1111"},
-    ];
+    var [data2,setData2] = useState([
+        {id:1,  name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Aluno",       disc:"Lorem ipsum",                           lab:"1"},
+        {id:2,  name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Professor",   disc:"Lorem ipsum, Lorem ipsum, Lorem ipsum", lab:"11"},
+        {id:3,  name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Aluno",       disc:"Lorem ipsum, Lorem ipsum",              lab:"111"},
+        {id:4,  name:"Lorem ipsum Delorium Spert", num:"999999999", per:"Professor",   disc:"Lorem ipsum",                           lab:"1111"},
+    ]);
 
-    var data3 = [
-        {name:"Lorem ipsum Delorium Spert", state:"Indisponivel",       disc:"Lorem ipsum",                           teacher:"Lorem Ipsum",ocupation:"30"},
-        {name:"Lorem ipsum Delorium Spert", state:"Em aula até 20:20",  disc:"Lorem ipsum, Lorem ipsum, Lorem ipsum", teacher:"Lorem Ipsum",ocupation:"30"},
-        {name:"Lorem ipsum Delorium Spert", state:"Livre ate 18:30",    disc:"Lorem ipsum, Lorem ipsum",              teacher:"",           ocupation:"30"},
-        {name:"Lorem ipsum Delorium Spert", state:"aaaaaaaaaaaaa",      disc:"Lorem ipsum",                           teacher:"Lorem Ipsum",ocupation:"30"},
-    ];
+    var [data3,setData3] = useState([
+        {id:1,  name:"Lorem ipsum Delorium Spert", state:"Indisponivel",       disc:"Lorem ipsum",                           teacher:"Lorem Ipsum",ocupation:"30"},
+        {id:2,  name:"Lorem ipsum Delorium Spert", state:"Em aula até 20:20",  disc:"Lorem ipsum, Lorem ipsum, Lorem ipsum", teacher:"Lorem Ipsum",ocupation:"30"},
+        {id:3,  name:"Lorem ipsum Delorium Spert", state:"Livre ate 18:30",    disc:"Lorem ipsum, Lorem ipsum",              teacher:"",           ocupation:"30"},
+        {id:4,  name:"Lorem ipsum Delorium Spert", state:"aaaaaaaaaaaaa",      disc:"Lorem ipsum",                           teacher:"Lorem Ipsum",ocupation:"30"},
+    ]);
 
     var actions = [
-        <div className={styles.blueButton}>Fornecer Tag</div>,
+        <Button
+            text={"Fornecer Tag"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
     ];
 
     var actions2 = [
-        <div className={styles.blueButton}>Editar Dados</div>,
-        <div className={styles.blueButton}>Fornecer Acesso</div>,
-        <div className={styles.blueButton}>Remover Acesso</div>,
+        <Button
+            text={"Editar Dados"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
+        <Button
+            text={"Fornecer Acesso"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
+        <Button
+            text={"Remover Acesso"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
     ];
 
     var actions3 = [
-        <div className={styles.blueButton}>Editar Dados</div>,
-        <div className={styles.blueButton}>Enviar Funcionário</div>,
+        <Button
+            text={"Editar Dados"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
+        <Button
+            text={"Enviar Funcionário"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
     ];
 
     return(
@@ -135,15 +161,15 @@ export default function index(){
             </div>
 
             <div className={styles.center}>
-                    <div className={styles.Table2}>
-                        <Table 
-                            params={params2}
+                <div className={styles.Table2}>
+                    <Table 
+                        params={params2}
 
-                            data={data2}
+                        data={data2}
 
-                            actions={actions2}
-                        />
-                    </div>
+                        actions={actions2}
+                    />
+                </div>
             </div>
 
             <div className={styles.cardTitle}>
@@ -152,15 +178,15 @@ export default function index(){
             </div>
 
             <div className={styles.center}>
-                    <div className={styles.Table2}>
-                        <Table 
-                            params={params3}
+                <div className={styles.Table2}>
+                    <Table 
+                        params={params3}
 
-                            data={data3}
+                        data={data3}
 
-                            actions={actions3}
-                        />
-                    </div>
+                        actions={actions3}
+                    />
+                </div>
             </div>
 
 

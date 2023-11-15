@@ -1,14 +1,16 @@
+import Header from '../components/topbar/topbar.jsx'
+import Input from '../components/input/input.jsx'
+import  Lab  from '../components/lab/lab.jsx'
+import History from '../components/history/history.jsx'
+import styles from './telaAluno.module.css'
+import Button from '../components/button/button.jsx'
+
 import Image from 'next/image'
 import building from '../assets/building.svg';
 import book from '../assets/book.svg';
 import cartao from '../assets/cartao.svg';
 import pc from '../assets/pc.svg';
 import back from '../assets/back.svg';
-import Header from '../components/topbar/topbar.jsx'
-import Input from '../components/input/input.jsx'
-import  Lab  from '../components/lab/lab.jsx'
-import History from '../components/history/history.jsx'
-import styles from './telaAluno.module.css'
 
 export default function index(){
 
@@ -39,8 +41,16 @@ export default function index(){
                             <div className={styles.secondRowCard}>
                                 <Input type={1} title={"Turma"} placeholder={"Selecione a turma"}/>
                                 <div className={styles.buttons}>
-                                    <div className={styles.whiteButton}>Limpar</div>
-                                    <div className={styles.blueButton}>Confirmar</div>
+                                    <Button
+                                        text={"Limpar"}
+                                        color={"white"}
+                                        onClick={()=>{}}
+                                    />
+                                    <Button
+                                        text={"Confirmar"}
+                                        color={"blue"}
+                                        onClick={()=>{}}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -58,8 +68,16 @@ export default function index(){
                             </div>
                             <div className={`${styles.secondRowCard} ${styles.dois}`}>
                                 <div className={styles.buttons}>
-                                    <div className={styles.whiteButton}>Limpar</div>
-                                    <div className={styles.blueButton}>Confirmar</div>
+                                    <Button
+                                        text={"Limpar"}
+                                        color={"white"}
+                                        onClick={()=>{}}
+                                    />
+                                    <Button
+                                        text={"Confirmar"}
+                                        color={"blue"}
+                                        onClick={()=>{}}
+                                    />
                                 </div>
                             </div>
                         </div>
@@ -74,7 +92,11 @@ export default function index(){
                                 <Input type={0} title={"Número de Matrícula"} placeholder={"Ex: 219116052"}/>
                                 <Input type={0} title={"Código da Matéria"} placeholder={"Ex: MATA00"}/>
                                 <div className={styles.buttonImproviso}>
-                                    <div className={styles.blueButton}>Confirmar</div>
+                                    <Button
+                                        text={"Confirmar"}
+                                        color={"blue"}
+                                        onClick={()=>{}}
+                                    />
                                 </div>
                             </div>
                         </div>

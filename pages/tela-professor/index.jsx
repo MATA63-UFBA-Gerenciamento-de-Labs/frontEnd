@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Header from '../components/topbar/topbar.jsx'
 import Table from '../components/table/table.jsx'
 import Lab from '../components/lab/lab.jsx'
+import Button from '../components/button/button.jsx'
 
 import miniuser from '../assets/miniuser.svg'
 import pen from '../assets/pen.svg'
@@ -34,8 +35,16 @@ export default function index(){
     ];
 
     var actions = [
-        <div className={styles.blueButton}>Fornecer Acesso</div>,
-        <div className={styles.blueButton}>Remover Acesso</div>
+        <Button
+            text={"Fornecer Acesso"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
+        <Button
+            text={"Remover Acesso"}
+            color={"blue"}
+            onClick={()=>{}}
+        />,
     ];
 
     return(
