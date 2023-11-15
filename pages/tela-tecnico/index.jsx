@@ -2,13 +2,13 @@ import { useState } from 'react'
 import Image from 'next/image'
 import Header from '../components/topbar/topbar.jsx'
 import Table from '../components/table/table.jsx'
-import Lab from '../components/lab/lab.jsx'
+import Action from '../components/action/action.jsx'
 import History from '../components/history/history.jsx'
 import Button from '../components/button/button.jsx'
+import SideCard from '../components/sideCard/sideCard.jsx'
 
 import miniuser from '../assets/miniuser.svg'
 import pen from '../assets/pen.svg'
-import hammer from '../assets/hammer.svg'
 import prancheta from '../assets/prancheta.svg'
 import pc from '../assets/pc.svg';
 import styles from './telaTecnico.module.css'
@@ -21,6 +21,7 @@ export default function index(){
         {display:"Disciplina", atribute:"disci"},
         {display:"Turma", atribute:"lab"},
         {display:"Tipo", atribute:"type"},
+        {display:"Data", atribute:"date"},
     ];
 
     var params2 = [
@@ -40,10 +41,10 @@ export default function index(){
     ];
 
     var [data,setData]= useState([
-        {id:1,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"1", type:"Estudo"},
-        {id:2,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"2", type:"Aula"},
-        {id:3,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"3", type:"Aula"},
-        {id:4,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"4", type:"Estudo"},
+        {id:1,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"1", type:"Estudo", date: "08/09 20:00"},
+        {id:2,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"2", type:"Aula", date: "08/09 20:00"},
+        {id:3,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"3", type:"Aula", date: "08/09 20:00"},
+        {id:4,  name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"4", type:"Estudo", date: "08/09 20:00"},
     ]);
 
     var [data2,setData2] = useState([
@@ -99,6 +100,18 @@ export default function index(){
         />,
     ];
 
+    var info1 =[
+        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 01"}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 02"}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 03"}/>,
+    ]
+
+    var info2=[
+        <Action 
+            image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
+            info ={<span>Gerar Relatório </span>}
+        />,
+    ]
     return(
         
         <div className="tela-professor">
@@ -108,14 +121,10 @@ export default function index(){
             <h1 className={styles.title} >Olá, técnico</h1>
             <div className={styles.shadow}></div>
 
-            <div className={styles.cardTitle}>
-                <Image width={15} height={19} src={miniuser} alt='miniuser' />
-                <h3>Solicitações de Tag</h3>
-            </div>
-
+        
             <div className={styles.center}>
                 <div className={styles.ar}>
-                    <div className={styles.Table}>
+                    <div className={`${styles.table} ${styles.small}`}>
                         <Table 
                             title = {"Solicitações de Tag"}
 
@@ -128,44 +137,21 @@ export default function index(){
                             actions={actions}
                         />
                     </div>
-                </div>
-                <div className={styles.right}>
-                    <div className={styles.infoCard}>
-                        <div className={styles.cardTitle}> 
-                            <Image width={17} height={19} src={pen} alt='pen' />
-                            <h3>Usuários com Tempo Excedido</h3>
-                        </div>
-                        <div className={styles.otherActions}>
-                            <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 01"}/>
-                            <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 02"}/>
-                            <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 03"}/>
-                        </div>
-                    </div>
+                    <div className={styles.right}>
+                        <SideCard
+                            titleText={"Usuários com Tempo Excedido"}
+                            titleImage={<Image width={17} height={19} src={pen} alt='pen' />}
+                            info={info1}
+                        />
 
-                    <div className={styles.infoCard}>
-                        <div className={styles.cardTitle}> 
-                            <Image width={15} height={19} src={pc} alt='pc' />
-                            <h3>Gestão e Controle</h3>
-                        </div>
-                        <div className={styles.labs}>
-                            
-                        <a href="" className={styles.bot}>
-                            <Image width={20} height={22} src={prancheta} alt='prancheta' />
-                            <div className={styles.divSpan}><span>Gerar Relatório </span></div>
-                        </a>  
-                            
-                        </div>
+                        <SideCard
+                            titleText={"Gestão e Controle"}
+                            titleImage={<Image width={15} height={19} src={pc} alt='pc' />}
+                            info={info2}
+                        />
                     </div>
                 </div>
-            </div>
-
-            <div className={styles.cardTitle}>
-                <Image width={15} height={19} src={miniuser} alt='miniuser' />
-                <h3>Usuários Cadastrados</h3>
-            </div>
-
-            <div className={styles.center}>
-                <div className={styles.Table2}>
+                <div className={styles.table}>
                     <Table 
                         title = {"Usuários Cadastrados"}
 
@@ -178,15 +164,8 @@ export default function index(){
                         actions={actions2}
                     />
                 </div>
-            </div>
 
-            <div className={styles.cardTitle}>
-                <Image width={15} height={19} src={miniuser} alt='miniuser' />
-                <h3>Laboratórios</h3>
-            </div>
-
-            <div className={styles.center}>
-                <div className={styles.Table2}>
+                <div className={styles.table}>
                     <Table 
                         title = {"Laboratórios"}
 
@@ -199,9 +178,8 @@ export default function index(){
                         actions={actions3}
                     />
                 </div>
+
             </div>
-
-
         </div>
     )
 }

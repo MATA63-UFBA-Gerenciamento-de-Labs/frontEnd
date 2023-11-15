@@ -1,5 +1,5 @@
 import styles from './table.module.css'
-
+import Title from '../title/title.jsx'
 function createHeader(params){
 
     var ar = [];
@@ -45,18 +45,24 @@ function createActions(){
 
 }
 
-export default function Table( {params, data, actions} ){
+export default function Table( {title, titleImage, params, data, actions} ){
     return(
-        <div className={styles.table}>
-            <div className={styles.header}>
-                {createHeader( params || [] )}
+            <div className={styles.table}>
+                <div className={styles.tableTitle}>
+                    <Title
+                        text={title}
+                        Image={titleImage}
+                    />
+                </div>
+                <div className={styles.header}>
+                    {createHeader( params || [] )}
+                </div>
+                <div className={styles.data}>
+                    {createEntrys( params || [], data || [] )}
+                </div>
+                <div className={styles.actions}>
+                    {actions}
+                </div>
             </div>
-            <div className={styles.data}>
-                {createEntrys( params || [], data || [] )}
-            </div>
-            <div className={styles.actions}>
-                {actions}
-            </div>
-        </div>
     );
 }
