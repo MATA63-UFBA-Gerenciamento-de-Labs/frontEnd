@@ -1,9 +1,7 @@
 .history{
+    box-sizing: border-box;
     width: 341px;
-    display: flex;
-    flex-direction: column;
     height: 51px;
-    padding-top: 12px;
     cursor: pointer;
 }
 
@@ -11,8 +9,14 @@
     background-color: #DFE1E2;
 }
 
-.mini{
+.a{
+    padding-left: 10px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 12px;
+}
 
+.mini{
     flex-shrink: 0;
     color: var(--gray-gray-80, #333);
     font-variant-numeric: lining-nums proportional-nums;

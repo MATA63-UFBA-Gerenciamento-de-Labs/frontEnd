@@ -1,9 +1,9 @@
 .lab{
-
     display: flex;
     flex-direction: column;
     height: 51px;
     padding-top: 12px;
+    padding-left: 10px;
 }
 
 .mini{
@@ -25,5 +25,8 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
 
+.action{
+    padding-top: 0px;
 }
