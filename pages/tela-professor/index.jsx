@@ -85,14 +85,13 @@ export default function index(){
             <h1 className={styles.title} >Olá, professor</h1>
             <div className={styles.shadow}></div>
 
-            <div className={styles.cardTitle}>
-                <Image width={15} height={19} src={miniuser} alt='miniuser' />
-                <h3>Alunos Matriculados</h3>
-            </div>
-
             <div className={styles.center}>
                 <div className={styles.Table}>
                     <Table 
+                        title={"Alunos Matriculados"}
+                    
+                        titleImage={<Image width={15} height={19} src={miniuser} alt='miniuser' />}
+
                         params={params}
 
                         data={data}
