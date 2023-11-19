@@ -3,8 +3,8 @@ import Title from '../title/title.jsx'
 
 export function deleteUser( data, setData ){
     var ar = [... data];
-
     setData( ar.filter( e => !e.selected ) );
+    document.querySelectorAll(`.${styles.squareDiv} input`).forEach( e => e.checked = false );
 }
 
 export function TODO( data, setData ){
@@ -17,21 +17,19 @@ function createHeader(params, data, setData){
 
     params.forEach(op => {
         if(op.display == "check")
-                ar.push(
-                    <div className={styles.squareDiv} >
-                        <input type="checkbox"
-                            onClick={ ( event ) => {
-                                var ar = [... data];
-                                ar.forEach( e => e.selected = event.target.checked);
-                                setData(ar);
-                                var checkbox = document.querySelectorAll(`.${styles.squareDiv} input`);
-                                checkbox.forEach( e => e.checked = event.target.checked);
-                            } }
-                        />
-                    </div>
-                )
-            
-            else
+            ar.push(
+                <div className={styles.squareDiv} >
+                    <input type="checkbox"
+                        onClick={ ( event ) => {
+                            var ar = [... data];
+                            ar.forEach( e => e.selected = event.target.checked);
+                            setData(ar);
+                            document.querySelectorAll(`.${styles.squareDiv} input`).forEach( e => e.checked = event.target.checked);
+                        } }
+                    />
+                </div>
+            )
+        else
             ar.push(
                 <div className={styles.param} style={{width:100/params.length + "%;"}}>
                     {op.display}
