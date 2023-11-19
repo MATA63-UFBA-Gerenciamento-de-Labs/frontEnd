@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Header from '../components/topbar/topbar.jsx'
-import Table from '../components/table/table.jsx'
+import Table,{ deleteUser, TODO } from '../components/table/table.jsx'
 import Lab from '../components/lab/lab.jsx'
 import Button from '../components/button/button.jsx'
 
@@ -12,40 +12,44 @@ import pc from '../assets/pc.svg';
 import styles from './telaProfessor.module.css'
 import SideCard from '../components/sideCard/sideCard.jsx'
 import Action from '../components/action/action.jsx'
+import { useState } from 'react'
+
+
 
 export default function index(){
 
     var params = [
+        {display:"check"},
         {display:"Alunos", atribute:"name"}, 
         {display:"Número de Matrícula", atribute:"num"},
         {display:"Disciplina", atribute:"disci"},
         {display:"Laboratório", atribute:"lab"},
     ];
 
-    var data = [
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"1"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"2"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"3"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"4"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"5"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"6"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"7"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"8"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"9"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"10"},
-        {name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"11"},
-    ];
+    var [data, setData] = useState([
+        {id:1,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"1"},
+        {id:2,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"2"},
+        {id:3,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"3"},
+        {id:4,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"4"},
+        {id:5,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"5"},
+        {id:6,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"6"},
+        {id:7,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"7"},
+        {id:8,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"8"},
+        {id:9,  selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"9"},
+        {id:10, selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"10"},
+        {id:11, selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"11"},
+    ]);
 
     var actions = [
         <Button
             text={"Fornecer Acesso"}
             color={"blue"}
-            onClick={()=>{}}
+            onClick={()=>{ TODO( data, setData) }}
         />,
         <Button
             text={"Remover Acesso"}
             color={"blue"}
-            onClick={()=>{}}
+            onClick={()=>{ deleteUser( data, setData ) }}
         />,
     ];
 
@@ -95,6 +99,8 @@ export default function index(){
                         params={params}
 
                         data={data}
+
+                        setData={setData}
 
                         actions={actions}
                     />
