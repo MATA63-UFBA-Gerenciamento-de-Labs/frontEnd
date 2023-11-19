@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Header from '../components/topbar/topbar.jsx'
-import Table,{ deleteUser, TODO } from '../components/table/table.jsx'
+import Table,{ deleteEntry, addEntry, editEntry, TODO } from '../components/table/table.jsx'
 import Lab from '../components/lab/lab.jsx'
 import Button from '../components/button/button.jsx'
 
@@ -44,12 +44,12 @@ export default function index(){
         <Button
             text={"Fornecer Acesso"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData) }}
+            onClick={()=>{ addEntry( data, setData) }}
         />,
         <Button
             text={"Remover Acesso"}
             color={"blue"}
-            onClick={()=>{ deleteUser( data, setData ) }}
+            onClick={()=>{ deleteEntry( data, setData ) }}
         />,
     ];
 

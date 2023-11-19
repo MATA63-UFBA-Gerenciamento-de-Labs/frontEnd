@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Header from '../components/topbar/topbar.jsx'
-import Table,{ deleteUser, TODO } from '../components/table/table.jsx'
+import Table,{ deleteEntry, addEntry, editEntry, TODO } from '../components/table/table.jsx'
 import Action from '../components/action/action.jsx'
 import History from '../components/history/history.jsx'
 import Button from '../components/button/button.jsx'
@@ -68,7 +68,7 @@ export default function index(){
         <Button
             text={"Fornecer Tag"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData) }}
+            onClick={()=>{ TODO( data, setData, "1" ) }}
         />,
     ];
 
@@ -76,17 +76,17 @@ export default function index(){
         <Button
             text={"Editar Dados"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData) }}
+            onClick={()=>{ editEntry( data, setData, "2" ) }}
         />,
         <Button
             text={"Fornecer Acesso"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData) }}
+            onClick={()=>{ TODO( data, setData, "2" ) }}
         />,
         <Button
             text={"Remover Acesso"}
             color={"blue"}
-            onClick={()=>{ deleteUser( data2, setData2 )}}
+            onClick={()=>{ deleteEntry( data2, setData2, "2" )}}
         />,
     ];
 
@@ -94,12 +94,12 @@ export default function index(){
         <Button
             text={"Editar Dados"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData) }}
+            onClick={()=>{ TODO( data, setData, "3" ) }}
         />,
         <Button
             text={"Enviar Funcionário"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData) }}
+            onClick={()=>{ TODO( data, setData, "3" ) }}
         />,
     ];
 
@@ -137,7 +137,11 @@ export default function index(){
 
                             data={data}
 
+                            setData={setData}
+
                             actions={actions}
+
+                            id='1'
                         />
                     </div>
                     <div className={styles.right}>
@@ -164,7 +168,11 @@ export default function index(){
 
                         data={data2}
 
+                        setData={setData2}
+
                         actions={actions2}
+
+                        id='2'
                     />
                 </div>
 
@@ -178,7 +186,11 @@ export default function index(){
 
                         data={data3}
 
+                        setData={setData3}
+
                         actions={actions3}
+
+                        id='3'
                     />
                 </div>
 

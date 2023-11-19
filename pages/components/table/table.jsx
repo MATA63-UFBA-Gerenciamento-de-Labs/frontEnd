@@ -1,17 +1,24 @@
 import styles from './table.module.css'
 import Title from '../title/title.jsx'
 
-export function deleteUser( data, setData ){
+export function deleteEntry( data, setData, id = "1" ){
     var ar = [... data];
     setData( ar.filter( e => !e.selected ) );
-    document.querySelectorAll(`.${styles.squareDiv} input`).forEach( e => e.checked = false );
+    document.querySelectorAll(`#table${id} .${styles.data} .${styles.squareDiv} input`).forEach( e => e.checked = false );
 }
 
-export function TODO( data, setData ){
+export function addEntry( data, setData, id = "1" ){
+    alert("TODO - abrir modal add")
+}
+export function editEntry( data, setData, id = "1" ){
+    alert("TODO - abrir modal edit")
+}
+
+export function TODO( data, setData, id = "1" ){
     alert("TODO - abrir modal")
 }
 
-function createHeader(params, data, setData){
+function createHeader(params, data, setData, id){
 
     var ar = [];
 
@@ -24,7 +31,7 @@ function createHeader(params, data, setData){
                             var ar = [... data];
                             ar.forEach( e => e.selected = event.target.checked);
                             setData(ar);
-                            document.querySelectorAll(`.${styles.squareDiv} input`).forEach( e => e.checked = event.target.checked);
+                            document.querySelectorAll(`#table${id} .${styles.data} .${styles.squareDiv} input`).forEach( e => e.checked = event.target.checked);
                         } }
                     />
                 </div>
@@ -81,9 +88,9 @@ function createActions(){
 
 }
 
-export default function Table( {title, titleImage, params, data, setData, actions} ){
+export default function Table( {title, titleImage, params, data, setData, actions, id = "1"} ){
     return(
-            <div className={styles.table}>
+            <div id={"table"+ id}>
                 <div className={styles.tableTitle}>
                     <Title
                         text={title}
@@ -91,7 +98,7 @@ export default function Table( {title, titleImage, params, data, setData, action
                     />
                 </div>
                 <div className={styles.header}>
-                    {createHeader( params || [], data || [], setData )}
+                    {createHeader( params || [], data || [], setData, id )}
                 </div>
                 <div className={styles.data}>
                     {createEntrys( params || [], data || [], setData )}
