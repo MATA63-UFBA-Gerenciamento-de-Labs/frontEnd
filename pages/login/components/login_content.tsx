@@ -8,6 +8,7 @@ type LoginContentProps = {
   footer: string;
   icon: SvgIconComponent;
   placeholder: string;
+  setData: (value: string | ( (prevVar: string) => string ) ) => void;
 };
 
 function LoginContent(props: LoginContentProps): React.ReactElement {
@@ -16,6 +17,7 @@ function LoginContent(props: LoginContentProps): React.ReactElement {
             footer: props.footer || "",
             icon: props.icon || Lock,
             placeholder: props.placeholder || "",
+            setData: props.setData,
           } 
   return (
     <div
@@ -37,7 +39,7 @@ function LoginContent(props: LoginContentProps): React.ReactElement {
       >
         {props.label}
       </div>
-      <LoginInput icon={props.icon} placeholder={props.placeholder} />
+      <LoginInput icon={props.icon} placeholder={props.placeholder} setData={props.setData} />
       <div
         style={{
           color: "black",

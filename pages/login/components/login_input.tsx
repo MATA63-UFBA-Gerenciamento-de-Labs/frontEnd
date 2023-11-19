@@ -5,10 +5,13 @@ import { Lock } from "@mui/icons-material";
 
 type LoginInputProps = TextFieldProps & {
   icon: SvgIconComponent;
+  setData: (value: string | ( (prevVar: string) => string ) ) => void;
 };
 
 function LoginInput(props: LoginInputProps): React.ReactElement {
-  props = {icon: props.icon || Lock };
+  props = { icon: props.icon || Lock,
+            setData: props.setData, 
+          };
   
   const textFieldProps = { ...props };
   return (
@@ -36,6 +39,7 @@ function LoginInput(props: LoginInputProps): React.ReactElement {
         ),
       }}
       variant="outlined"
+      onChange={ e => props.setData(e.currentTarget.value)}
     />
   );
 }
