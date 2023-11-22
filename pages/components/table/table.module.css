@@ -6,6 +6,11 @@
     
 }
 
+.tableTitle{
+    padding-top: 18px;
+    padding-left: 21px;
+}
+
 .param{
     box-sizing: border-box;
     height: 56px;

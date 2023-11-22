@@ -1,0 +1,20 @@
+.act{
+    padding-left: 8px;
+    display: flex;
+    gap: 5px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.divSpan{
+    display: flex;
+    align-items: center;
+    color: #1351B4;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Rawline;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+

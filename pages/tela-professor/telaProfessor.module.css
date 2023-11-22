@@ -34,29 +34,6 @@
     box-shadow: 0px 1px 6px 0px rgba(51, 51, 51, 0.16);
 }
 
-.blueButton{
-    
-    display: flex;
-    width: 181px;
-    height: 32px;
-    padding: 8px 24px;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-    box-sizing: border-box;
-    flex-shrink: 0;
-    border-radius: 20px;
-    background: var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
-    color: var(--pure-pure, #FFF);
-    text-align: center;
-    font-family: Rawline;
-    font-size: 16.8px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-    cursor: pointer;
-}
-
 .infoCard{
     width: 383px;
     padding-bottom: 23px;
@@ -94,37 +71,13 @@
     border-bottom: 1px solid #888;
 }
 
-.top{
-    padding-left: 8px;
+.otherActions{
     display: flex;
-    gap: 5px;
-    margin-bottom: 10px ;
-    text-decoration: none;
+    flex-direction: row;
+    gap: 30px;
 }
 
-.bot{
-    padding-left: 8px;
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
-    text-decoration: none;
-}
 
-.divSpan{
-    height: 25px;
-    display: flex;
-    align-items: center;
-}
-
-.divSpan span{
-    color: #1351B4;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-family: Rawline;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-}
 
 .labs{
     padding-left: 15px;
