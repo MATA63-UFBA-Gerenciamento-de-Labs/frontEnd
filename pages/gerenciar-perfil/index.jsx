@@ -16,7 +16,6 @@ const ProfileManagement = () => {
 
     const handleNameChange = (e) => {
         setName(e.target.value);
-        console.log(e.target.value);
     };
 
     const handleEmailChange = (e) => {
@@ -38,6 +37,7 @@ const ProfileManagement = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Add your logic here to update the profile information
+        alert("Integração com o backend");
     };
 
     return (
