@@ -4,13 +4,13 @@ import styles from './input.module.css'
  * 
  * type = 0 -> text,  type = 1 -> select
  */
-export default function Input( {title, placeholder, type} ){
+export default function Input( {title, placeholder, type, onChange, width} ){
 
     if( type == 0)
         return(
             <div className={styles.input}>
                 <p className={styles.title}>{title}</p>
-                <input type="text" placeholder={placeholder} className={styles.inputA}/>
+                <input type="text" placeholder={placeholder} className={styles.inputA} onChange={onChange} style={{width: (width ? width : "200") +"px;"}}/>
             </div>
         );    
     else if( type == 1 )

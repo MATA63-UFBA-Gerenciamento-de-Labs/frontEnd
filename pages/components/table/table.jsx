@@ -40,9 +40,8 @@ function createHeader(params, data, setData, id){
             ar.push(
                 <div className={styles.param} style={{width:100/params.length + "%;"}}>
                     {op.display}
-                </div>
-        
-        )
+                </div>  
+            )
     });
 
     return ar;
