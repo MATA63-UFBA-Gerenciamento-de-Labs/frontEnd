@@ -51,7 +51,7 @@ const ProfileManagement = () => {
             <form onSubmit={handleSubmit} className={styles.form}>
                 <Input 
                     title="Name" 
-                    type="0" 
+                    type="text" 
                     placeholder={"Insira seu nome completo"} 
                     onChange={handleNameChange} 
                     width={"360"} 
@@ -59,7 +59,7 @@ const ProfileManagement = () => {
                 <br />
                 <Input 
                     title="Email" 
-                    type="0" 
+                    type="text" 
                     placeholder={"Insira seu email"} 
                     onChange={handleEmailChange} 
                     width={"360"} 
@@ -67,7 +67,7 @@ const ProfileManagement = () => {
                 <br />
                 <Input
                     title="Confirm Email"
-                    type="0"
+                    type="text"
                     placeholder={"Confirme seu email"}
                     onChange={handleConfirmEmailChange}
                     width={"360"}
@@ -75,7 +75,7 @@ const ProfileManagement = () => {
                 <br />
                 <Input
                     title="Password"
-                    type="0"
+                    type="text"
                     placeholder={"Insira nova senha"}
                     onChange={handlePasswordChange}
                     width={"360"}
@@ -83,7 +83,7 @@ const ProfileManagement = () => {
                 <br />
                 <Input
                     title="Confirm Password"
-                    type="0"
+                    type="text"
                     placeholder={"Confirme nova senha"}
                     onChange={handleConfirmPasswordChange}
                     width={"360"}

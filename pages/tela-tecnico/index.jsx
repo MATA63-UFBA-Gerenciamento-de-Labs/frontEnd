@@ -13,6 +13,12 @@ import prancheta from '../assets/prancheta.svg'
 import pc from '../assets/pc.svg';
 import styles from './telaTecnico.module.css'
 
+var i = 1;
+
+function keys(){
+    return i++;
+}
+
 export default function index(){
 
     var params = [
@@ -69,6 +75,7 @@ export default function index(){
             text={"Fornecer Tag"}
             color={"blue"}
             onClick={()=>{ TODO( data, setData, "Fornecer Tag", "1" ) }}
+            key={keys()}
         />,
     ];
 
@@ -77,16 +84,19 @@ export default function index(){
             text={"Editar Dados"}
             color={"blue"}
             onClick={()=>{ editEntry( data2, setData2, params2, "2" ) }}
+            key={keys()}
         />,
         <Button
             text={"Fornecer Acesso"}
             color={"blue"}
             onClick={()=>{ addEntry( data2, setData2, params2, "2" ) }}
+            key={keys()}
         />,
         <Button
             text={"Remover Acesso"}
             color={"blue"}
             onClick={()=>{ deleteEntry( data2, setData2, "2" )}}
+            key={keys()}
         />,
     ];
 
@@ -95,24 +105,27 @@ export default function index(){
             text={"Editar Dados"}
             color={"blue"}
             onClick={()=>{ editEntry( data3, setData3, params3, "3" ) }}
+            key={keys()}
         />,
         <Button
             text={"Enviar Funcionário"}
             color={"blue"}
             onClick={()=>{ TODO( data3, setData3, "Enviar funcionario", "3" ) }}
+            key={keys()}
         />,
     ];
 
     var info1 =[
-        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 01"}/>,
-        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 02"}/>,
-        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 03"}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 01"} key={keys()}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 02"} key={keys()}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Usuario 03"} key={keys()}/>,
     ]
 
     var info2=[
         <Action 
             image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
             info ={<span>Gerar Relatório </span>}
+            key={keys()}
         />,
     ]
     return(

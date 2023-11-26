@@ -14,7 +14,11 @@ import SideCard from '../components/sideCard/sideCard.jsx'
 import Action from '../components/action/action.jsx'
 import { useState } from 'react'
 
+var i = 1;
 
+function keys(){
+    return i++;
+}
 
 export default function index(){
 
@@ -39,14 +43,16 @@ export default function index(){
         {id:10, selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"10"},
         {id:11, selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"11"},
     ]);
-
+    
     var actions = [
         <Button
+            key={keys()}
             text={"Fornecer Acesso"}
             color={"blue"}
             onClick={()=>{ addEntry( data, setData) }}
         />,
         <Button
+            key={keys()}
             text={"Remover Acesso"}
             color={"blue"}
             onClick={()=>{ deleteEntry( data, setData ) }}
@@ -55,11 +61,13 @@ export default function index(){
 
     var info1 =[
         <Action 
+            key={keys()}
             image={<Image width={23} height={25} src={hammer} alt='hammer' />}
             info={<span>Solicitar Reparo de Laboratório</span>} 
         />,
-        <div className={styles.line}></div>,
+        <div className={styles.line} key={keys()}></div>,
         <Action
+            key={keys()}
             image={<Image width={20} height={22} src={prancheta} alt='prancheta' />}
             info={<span>Gerar Presença de Aula</span>}
         />
@@ -67,14 +75,17 @@ export default function index(){
 
     var info2 = [
         <Action 
+            key={keys()}
             image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
             info ={<Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"} cla={"action"}/>}
         />,
         <Action 
+            key={keys()}
             image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
             info ={<Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"} cla={"action"}/>}
         />,
         <Action 
+            key={keys()}
             image={<Image width={20} height={22} src={prancheta} alt='prancheta' />} 
             info ={<Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} color={"#1351B4"} cla={"action"}/>}
         />,

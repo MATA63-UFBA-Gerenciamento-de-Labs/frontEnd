@@ -50,11 +50,12 @@ export function TODO( data, setData, msg, id = "1" ){
 function createHeader(params, data, setData, id){
 
     var ar = [];
-
+    var i = 1
     params.forEach(op => {
+
         if(op.display == "check")
             ar.push(
-                <div className={styles.squareDiv} >
+                <div className={styles.squareDiv} key={id + i + "jcnjkncfg"}>
                     <input type="checkbox"
                         onClick={ ( event ) => {
                             var ar = [... data];
@@ -67,27 +68,28 @@ function createHeader(params, data, setData, id){
             )
         else
             ar.push(
-                <div className={styles.param} style={{width:100/params.length + "%;"}}>
+                <div className={styles.param} style={{width:100/params.length + "%;"}} key={id + i + "jcnjkncfg"}>
                     {op.display}
                 </div>  
             )
+        i++;
     });
 
     return ar;
 }
 
-function createEntrys(params, data, setData){
+function createEntrys(params, data, setData, id){
     var ar = [];
-
+    var i = 1;
     data.forEach(e => {
         var entry = [
             
         ];
-
+        var j = 1;
         params.forEach(p => {
             if(p.display == "check")
                 entry.push(
-                    <div className={styles.squareDiv}>
+                    <div className={styles.squareDiv} key={id + j + "uheqwuiodsbadajkd2"}>
                         <input type="checkbox" id={e.id + "input"}
                             onClick={ ( event ) => {
                                 var ar = [... data];
@@ -100,13 +102,15 @@ function createEntrys(params, data, setData){
             
             else
                 entry.push(
-                <div className={styles.entryDataParam} style={{width:100/params.length + "%;"}}>
+                <div className={styles.entryDataParam} style={{width:100/params.length + "%"}} key={id + j + "uheqwuiodsbadajkd2"}>
                     {e[p.atribute]}
                 </div>
             )
+            j++;
         });
 
-        ar.push( <div id={e.id} className={styles.entryData}> {entry} </div> )
+        ar.push( <div id={e.id} className={styles.entryData} key={id + i + "uheqwuiodsbadajkd"}> {entry} </div> )
+        i++;
     });
 
     return ar;
@@ -129,7 +133,7 @@ export default function Table( {title, titleImage, params, data, setData, action
                     {createHeader( params || [], data || [], setData, id )}
                 </div>
                 <div className={styles.data}>
-                    {createEntrys( params || [], data || [], setData )}
+                    {createEntrys( params || [], data || [], setData, id )}
                 </div>
                 <div className={styles.actions}>
                     {actions}
