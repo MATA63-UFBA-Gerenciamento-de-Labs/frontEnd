@@ -3,22 +3,24 @@ import React from "react";
 import { useRouter } from 'next/navigation';
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 
-function login( user: string, data:string, router: AppRouterInstance ): void{
+function login( user: string, pass:string, router: AppRouterInstance ): void{
   
-  if( user.includes("aluno") ){
-    router.push("/tela-aluno")
+  if( user[0] == "0" && user[1] == "0" && pass[0] == "0" && pass[1] == "0" ){
+    router.push("/tela-tecnico")
     return
   }
 
-  if( user.includes("professor") ){
+  if( user[0] == "1"  && user[1] == "1" && pass[0] == "1" && pass[1] == "1"){
     router.push("/tela-professor")
     return
   }
 
-  if( user.includes("tecnico") ){
-    router.push("/tela-tecnico")
+  if( user[0] == "2" && user[1] == "2" && pass[0] == "2" && pass[1] == "2" ){
+    router.push("/tela-aluno")
     return
   }
+
+  alert("Matrícula e/ou senha incorretas")
   
 }
 

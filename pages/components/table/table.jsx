@@ -1,5 +1,6 @@
 import styles from './table.module.css'
 import Title from '../title/title.jsx'
+import { Alert } from '@mui/material';
 
 export function deleteEntry( data, setData, id = "1" ){
     var ar = [... data];
@@ -20,10 +21,12 @@ export function addEntry( data, setData, params, id = "1" ){
 }
 export function editEntry( data, setData, params, id = "1" ){
     var ar = [... data];
-    var filteredArray = ar.filter( e => !e.selected ) ;
+    var filteredArray = ar.filter( e => e.selected ) ;
 
-    if (filteredArray.length == 0)
+    if (filteredArray.length == 0){
+        alert("Selecione uma entrada para editar")
         return;
+    }
 
     ar.forEach(e => {
         if(e.selected){
@@ -40,8 +43,8 @@ export function editEntry( data, setData, params, id = "1" ){
     alert("TODO - abrir modal edit")
 }
 
-export function TODO( data, setData, id = "1" ){
-    alert("TODO - abrir modal")
+export function TODO( data, setData, msg, id = "1" ){
+    alert("TODO - abrir modal " + msg)
 }
 
 function createHeader(params, data, setData, id){
