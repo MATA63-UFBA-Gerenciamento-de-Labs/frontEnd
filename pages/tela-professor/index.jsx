@@ -49,7 +49,7 @@ export default function index(){
             key={keys()}
             text={"Fornecer Acesso"}
             color={"blue"}
-            onClick={()=>{ addEntry( data, setData) }}
+            onClick={()=>{ addEntry( data, setData, params) }}
         />,
         <Button
             key={keys()}
