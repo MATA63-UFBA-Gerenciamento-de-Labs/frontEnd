@@ -15,8 +15,7 @@ import back from '../assets/back.svg';
 import MainCard from '../components/mainCard/mainCard.jsx'
 import SideCard from '../components/sideCard/sideCard.jsx'
 
-var i = 1;
-
+var i = 10;
 function keys(){
     return i++;
 }
@@ -28,7 +27,7 @@ export default function index(){
     const [turma1, setTurma1] = useState("default");
     
     const [matricula2, setMatricula2] = useState("");
-    const [lab2, setLab2] = useState("");
+    const [lab2, setLab2] = useState("default");
     const [periodo2, setPeriodo2] = useState("default");
 
     const [matricula3, setMatricula3] = useState("");
@@ -36,17 +35,17 @@ export default function index(){
 
     
     var firstRow1 = [
-        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula1} onChange={(e) => setMatricula1(e.target.value)} key={keys()}/>,
-        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria1} onChange={(e) => setCodigoMateria1(e.target.value)}key={keys()}/>,
-        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab1} onChange={(e) => setLab1(e.target.value)}key={keys()}/>
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula1} onChange={(e) => setMatricula1(e.target.value)} key={1}/>,
+        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria1} onChange={(e) => setCodigoMateria1(e.target.value)}key={2}/>,
+        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab1} onChange={(e) => setLab1(e.target.value)}key={3}/>
     ]
-    var secondRow1 = [<Input type={"dropdown"} title={"Turma"} placeholder={"Selecione a turma"} value={turma1} onChange={(e) => setTurma1(e.target.value)}key={keys()}/>]
+    var secondRow1 = [<Input type={"dropdown"} title={"Turma"} placeholder={"Selecione a turma"} value={turma1} onChange={(e) => setTurma1(e.target.value)}key={4}/>]
     var buttons1 = [
         <Button
             text={"Limpar"}
             color={"white"}
             onClick={( )=>{ setMatricula1(""); setCodigoMateria1(""); setLab1("default"); setTurma1("default");}}
-            key={keys()}
+            key={i++}
         />,
         <Button
             text={"Confirmar"}
@@ -57,22 +56,22 @@ export default function index(){
                         else
                             alert("Preencha todos os campos")
                     }}
-            key={keys()}
+            key={i++}
         />
     ]
 
     var firstRow2 = [
-        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula2} onChange={(e) => setMatricula2(e.target.value)}key={keys()}/>,
-        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab2} onChange={(e) => setLab2(e.target.value)}key={keys()}/>,
-        <Input type={"dropdown"} title={"Período"} placeholder={"Selecione o período"} value={periodo2} onChange={(e) => setPeriodo2(e.target.value)}key={keys()}/>,
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula2} onChange={(e) => setMatricula2(e.target.value)}key={5}/>,
+        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab2} onChange={(e) => setLab2(e.target.value)}key={6}/>,
+        <Input type={"dropdown"} title={"Período"} placeholder={"Selecione o período"} value={periodo2} onChange={(e) => setPeriodo2(e.target.value)}key={7}/>,
     ]
 
     var buttons2 = [
         <Button
             text={"Limpar"}
             color={"white"}
-            onClick={( )=>{ setMatricula2(""); setLab2(""); setPeriodo2("default");}}
-            key={keys()}
+            onClick={( )=>{ setMatricula2(""); setLab2("default"); setPeriodo2("default");}}
+            key={i++}
         />,
         <Button
             text={"Confirmar"}
@@ -83,13 +82,13 @@ export default function index(){
                         else
                             alert("Preencha todos os campos")
                     }}
-            key={keys()}
+            key={i++}
         />
     ]
 
     var firstRow3 =[
-        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula3} onChange={(e) => setMatricula3(e.target.value)} key={keys()}/>,
-        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria3} onChange={(e) => setCodigoMateria3(e.target.value)}key={keys()}/>,
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula3} onChange={(e) => setMatricula3(e.target.value)} key={8}/>,
+        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria3} onChange={(e) => setCodigoMateria3(e.target.value)}key={9}/>,
         <Button
             text={"Confirmar"}
             color={"blue"}
@@ -99,22 +98,22 @@ export default function index(){
                             else
                                 alert("Preencha todos os campos")
                         }}
-            key={keys()}
+            key={i++}
         />,
     ]
 
     var info1 =[
-        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={keys()}/>,
-        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={keys()}/>,
-        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={keys()}/>,
-        <div style={{ height: "29px"}} key={keys()}></div>,
+        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={i++}/>,
+        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={i++}/>,
+        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={i++}/>,
+        <div style={{ height: "29px"}} key={i++}></div>,
     ]
 
     var info2 =[
-        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 01"} key={keys()}/>,
-        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 02"} key={keys()}/>,
-        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 03"} key={keys()}/>,
-        <div style={{ height: "64px"}} key={keys()}></div>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 01"} key={i++}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 02"} key={i++}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 03"} key={i++}/>,
+        <div style={{ height: "64px"}} key={i++}></div>,
     ]
     
     return(
