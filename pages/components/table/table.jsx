@@ -7,10 +7,36 @@ export function deleteEntry( data, setData, id = "1" ){
     document.querySelectorAll(`#table${id} .${styles.data} .${styles.squareDiv} input`).forEach( e => e.checked = false );
 }
 
-export function addEntry( data, setData, id = "1" ){
-    alert("TODO - abrir modal add")
+export function addEntry( data, setData, params, id = "1" ){
+    //Criar um novo objeto com os valores em params
+    var newEntry = {selected: false, id: id};
+    params.forEach(p => {
+        if(p.display != "check")
+            newEntry[p.atribute] = prompt(`Digite o valor para ${p.display}`);
+    });
+    var ar = [... data];
+    ar.push( newEntry );
+    setData( ar );
 }
-export function editEntry( data, setData, id = "1" ){
+export function editEntry( data, setData, params, id = "1" ){
+    var ar = [... data];
+    var filteredArray = ar.filter( e => !e.selected ) ;
+
+    if (filteredArray.length == 0)
+        return;
+
+    ar.forEach(e => {
+        if(e.selected){
+            params.forEach(p => {
+                if(p.display != "check")
+                    e[p.atribute] = prompt(`Digite o novo valor para ${p.display} de ${e[p.atribute]}`);
+            });
+        }
+    });
+    
+    setData( ar );
+    
+    document.querySelectorAll(`#table${id} .${styles.data} .${styles.squareDiv} input`).forEach( e => e.checked = false );
     alert("TODO - abrir modal edit")
 }
 

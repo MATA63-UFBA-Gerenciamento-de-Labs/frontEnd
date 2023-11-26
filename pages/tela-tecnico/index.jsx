@@ -76,12 +76,12 @@ export default function index(){
         <Button
             text={"Editar Dados"}
             color={"blue"}
-            onClick={()=>{ editEntry( data, setData, "2" ) }}
+            onClick={()=>{ editEntry( data2, setData2, params2, "2" ) }}
         />,
         <Button
             text={"Fornecer Acesso"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData, "2" ) }}
+            onClick={()=>{ addEntry( data2, setData2, params2, "2" ) }}
         />,
         <Button
             text={"Remover Acesso"}
@@ -94,12 +94,12 @@ export default function index(){
         <Button
             text={"Editar Dados"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData, "3" ) }}
+            onClick={()=>{ TODO( data3, setData3, "3" ) }}
         />,
         <Button
             text={"Enviar Funcionário"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData, "3" ) }}
+            onClick={()=>{ TODO( data3, setData3, "3" ) }}
         />,
     ];
 
