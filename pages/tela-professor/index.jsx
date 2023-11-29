@@ -50,12 +50,14 @@ export default function index(){
             text={"Fornecer Acesso"}
             color={"blue"}
             onClick={()=>{ addEntry( data, setData, params) }}
+            id={1}
         />,
         <Button
             key={keys()}
             text={"Remover Acesso"}
             color={"blue"}
             onClick={()=>{ deleteEntry( data, setData ) }}
+            id={2}
         />,
     ];
 

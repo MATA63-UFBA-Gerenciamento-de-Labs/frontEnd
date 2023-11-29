@@ -76,6 +76,7 @@ export default function index(){
             color={"blue"}
             onClick={()=>{ TODO( data, setData, "Fornecer Tag", "1" ) }}
             key={keys()}
+            id={1}
         />,
     ];
 
@@ -85,18 +86,21 @@ export default function index(){
             color={"blue"}
             onClick={()=>{ editEntry( data2, setData2, params2, "2" ) }}
             key={keys()}
+            id={2}
         />,
         <Button
             text={"Fornecer Acesso"}
             color={"blue"}
             onClick={()=>{ addEntry( data2, setData2, params2, "2" ) }}
             key={keys()}
+            id={3}
         />,
         <Button
             text={"Remover Acesso"}
             color={"blue"}
             onClick={()=>{ deleteEntry( data2, setData2, "2" )}}
             key={keys()}
+            id={4}
         />,
     ];
 
@@ -106,12 +110,14 @@ export default function index(){
             color={"blue"}
             onClick={()=>{ editEntry( data3, setData3, params3, "3" ) }}
             key={keys()}
+            id={5}
         />,
         <Button
             text={"Enviar Funcionário"}
             color={"blue"}
             onClick={()=>{ TODO( data3, setData3, "Enviar funcionario", "3" ) }}
             key={keys()}
+            id={6}
         />,
     ];
 
