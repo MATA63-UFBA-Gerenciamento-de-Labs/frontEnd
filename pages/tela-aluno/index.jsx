@@ -46,7 +46,7 @@ export default function index(){
             color={"white"}
             onClick={( )=>{ setMatricula1(""); setCodigoMateria1(""); setLab1("default"); setTurma1("default");}}
             key={i++}
-            id={4}
+            id={5}
         />,
         <Button
             text={"Confirmar"}
@@ -58,14 +58,14 @@ export default function index(){
                             alert("Preencha todos os campos")
                     }}
             key={i++}
-            id={5}
+            id={6}
         />
     ]
 
     var firstRow2 = [
-        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula2} onChange={(e) => setMatricula2(e.target.value)}key={5} id={6}/>,
-        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab2} onChange={(e) => setLab2(e.target.value)}key={6} id={7}/>,
-        <Input type={"dropdown"} title={"Período"} placeholder={"Selecione o período"} value={periodo2} onChange={(e) => setPeriodo2(e.target.value)}key={7} id={8}/>,
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula2} onChange={(e) => setMatricula2(e.target.value)}key={5} id={7}/>,
+        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab2} onChange={(e) => setLab2(e.target.value)}key={6} id={8}/>,
+        <Input type={"dropdown"} title={"Período"} placeholder={"Selecione o período"} value={periodo2} onChange={(e) => setPeriodo2(e.target.value)}key={7} id={9}/>,
     ]
 
     var buttons2 = [
@@ -74,7 +74,7 @@ export default function index(){
             color={"white"}
             onClick={( )=>{ setMatricula2(""); setLab2("default"); setPeriodo2("default");}}
             key={i++}
-            id={9}
+            id={10}
         />,
         <Button
             text={"Confirmar"}
@@ -86,13 +86,13 @@ export default function index(){
                             alert("Preencha todos os campos")
                     }}
             key={i++}
-            id={9}
+            id={11}
         />
     ]
 
     var firstRow3 =[
-        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula3} onChange={(e) => setMatricula3(e.target.value)} key={8} id={10}/>,
-        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria3} onChange={(e) => setCodigoMateria3(e.target.value)}key={9} id={11}/>,
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula3} onChange={(e) => setMatricula3(e.target.value)} key={8} id={12}/>,
+        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria3} onChange={(e) => setCodigoMateria3(e.target.value)}key={9} id={13}/>,
         <Button
             text={"Confirmar"}
             color={"blue"}
@@ -103,7 +103,7 @@ export default function index(){
                                 alert("Preencha todos os campos")
                         }}
             key={i++}
-            id={12}
+            id={14}
         />,
     ]
 
