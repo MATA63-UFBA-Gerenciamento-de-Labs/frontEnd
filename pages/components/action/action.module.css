@@ -1,4 +1,5 @@
 .act{
+    width: fit-content;
     padding-left: 8px;
     display: flex;
     gap: 5px;

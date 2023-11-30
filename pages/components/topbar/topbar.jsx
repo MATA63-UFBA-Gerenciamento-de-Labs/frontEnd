@@ -12,12 +12,17 @@ export default function Header(){
             <div className={styles.titleHeader}>
                 <h2>Sistema de Salas</h2>
             </div>
-            <div className={styles.userOptions}>
-                <div className={styles.icon}>
-                    <Image width={40} height={40} src={userIcon} alt='userIcon' />
+            <a href='./gerenciar-perfil'>
+                <div className={styles.userOptions}>
+                    <div className={styles.icon}>
+                        <Image width={40} height={40} src={userIcon} alt='userIcon' />
+                    </div>
+                    <div className={styles.dropdownUser}></div>
                 </div>
-                <div className={styles.dropdownUser}></div>
-            </div>
+            </a>
+            
+
+            
         </header>   
     )
 }
