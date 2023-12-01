@@ -14,7 +14,7 @@ import SideCard from '../components/sideCard/sideCard.jsx'
 import Action from '../components/action/action.jsx'
 import { useState } from 'react'
 
-import GrantAccessModal from '../components/modal/grantAccessModal.jsx'
+import GrantAccessModalProfessor from '../components/modal/grantAccessModalProfessor.jsx'
 
 var i = 1;
 
@@ -70,7 +70,7 @@ export default function index(){
             color={"blue"}
             id={1}
         />, 
-        <GrantAccessModal 
+        <GrantAccessModalProfessor 
             isOpen={isModalOpen} 
             onRequestClose={closeModal} 
             />,

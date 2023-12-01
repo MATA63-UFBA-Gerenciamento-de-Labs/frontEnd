@@ -13,6 +13,9 @@ import prancheta from '../assets/prancheta.svg'
 import pc from '../assets/pc.svg';
 import styles from './telaTecnico.module.css'
 
+import GrantAccessModalTecnico from '../components/modal/grantAccessModalTecnico.jsx'
+import GrantTokenModalTecnico from '../components/modal/grantTokenModalTecnico.jsx'
+
 var i = 1;
 
 function keys(){
@@ -20,6 +23,25 @@ function keys(){
 }
 
 export default function index(){
+
+    const [isModalOpen1, setIsModalOpen1] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal1 = () => {
+        setIsModalOpen1(true);
+    };
+
+    const closeModal1 = () => {
+        setIsModalOpen1(false);
+    };
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     var params = [
         {display:"check"},
@@ -71,13 +93,24 @@ export default function index(){
     ]);
 
     var actions = [
+        // <Button
+        //     text={"Fornecer Tag"}
+        //     color={"blue"}
+        //     onClick={()=>{ TODO( data, setData, "Fornecer Tag", "1" ) }}
+        //     key={keys()}
+        //     id={1}
+        // />,
         <Button
             text={"Fornecer Tag"}
             color={"blue"}
-            onClick={()=>{ TODO( data, setData, "Fornecer Tag", "1" ) }}
+            onClick={openModal}
             key={keys()}
             id={1}
         />,
+        <GrantTokenModalTecnico 
+            isOpen={isModalOpen} 
+            onRequestClose={closeModal} 
+        />
     ];
 
     var actions2 = [
@@ -88,13 +121,23 @@ export default function index(){
             key={keys()}
             id={2}
         />,
+        // <Button
+        //     text={"Fornecer Acesso"}
+        //     color={"blue"}
+        //     onClick={()=>{ addEntry( data2, setData2, params2, "2" ) }}
+        //     key={keys()}
+        //     id={3}
+        // />,
         <Button
             text={"Fornecer Acesso"}
             color={"blue"}
-            onClick={()=>{ addEntry( data2, setData2, params2, "2" ) }}
-            key={keys()}
+            onClick={openModal1}
             id={3}
         />,
+        <GrantAccessModalTecnico
+            isOpen={isModalOpen1} 
+            onRequestClose={closeModal1} 
+            />,
         <Button
             text={"Remover Acesso"}
             color={"blue"}

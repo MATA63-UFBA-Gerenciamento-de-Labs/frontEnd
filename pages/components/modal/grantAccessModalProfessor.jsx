@@ -1,13 +1,15 @@
 // Modal.js
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import styles from './grantAccessModal.module.css'
+import styles from './grantAccessModalProfessor.module.css';
 
-const GrantAccessModal = ({ isOpen, onRequestClose }) => {
+const GrantAccessModalProfessor = ({ isOpen, onRequestClose }) => {
   const [nomeAluno, setNomeAluno] = useState('');
   const [numeroMatricula, setNumeroMatricula] = useState('');
   const [disciplina, setDisciplina] = useState('');
   const [laboratorio, setLaboratorio] = useState('');
+  const [file, setFile] = useState(null);
+  
 
   const handleSubmit = () => {
     // Lógica para lidar com os dados, por exemplo, enviar para um servidor
@@ -16,6 +18,7 @@ const GrantAccessModal = ({ isOpen, onRequestClose }) => {
       numeroMatricula,
       disciplina,
       laboratorio,
+      file
     });
 
     // Limpar os campos após o envio
@@ -23,28 +26,22 @@ const GrantAccessModal = ({ isOpen, onRequestClose }) => {
     setNumeroMatricula('');
     setDisciplina('');
     setLaboratorio('');
+    setFile(null);
 
     // Fechar o modal
     onRequestClose();
   };
 
-  const overlayStyle = {
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    backgroundColor: 'rgba(0, 0, 0, 0.5)', // cor escura com transparência
-    zIndex: 9999,
-  };
+  const handleFileChange = (e) => {
+    setFile(e.target.files[0]);
+  }
 
   return (
     <Modal
       isOpen={isOpen}
       onRequestClose={onRequestClose}
       contentLabel="Grant Access Modal"
-      //style={{ overlay: overlayStyle }}
-      className={styles.customModal} // Adicione uma classe personalizada para estilização
+      className={styles.customModal}
       overlayClassName={styles.customOverlay}
 
     >
@@ -94,6 +91,12 @@ const GrantAccessModal = ({ isOpen, onRequestClose }) => {
                 onChange={(e) => setLaboratorio(e.target.value)}
               />
             </div>
+            <div className={styles.field}>
+            <label>
+              Alunos em Lotes:
+            </label>
+            <input type="file" name="arquivo" onChange={handleFileChange} />
+            </div>
           </form>
         </div>
         <div className={styles.buttons}>
@@ -109,4 +112,4 @@ const GrantAccessModal = ({ isOpen, onRequestClose }) => {
   );
 };
 
-export default GrantAccessModal;
+export default GrantAccessModalProfessor;
