@@ -1,0 +1,72 @@
+.title{
+    color: #000;
+    margin-left: 2.5%;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Rawline;
+    font-size: 41.8px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.shadow{
+    background: var(--gray-gray-20, #CCC);
+    width: 95%;
+    margin-left: 2.5%;
+    height: 1px;
+    flex-shrink: 0;
+    margin-bottom: 28px;
+}
+
+.form{
+    padding-left: 3.5%;
+}
+
+.buttonBlue{
+    display: inline-flex;
+    width: 128px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 0;
+    background: var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
+    color: var(--pure-pure, #FFF);
+    text-align: center;
+    font-family: Rawline;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.buttonWhite{
+    display: inline-flex;
+    width: 128px;
+    padding: 8px 24px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    border-radius: 20px;
+    border: 1px solid var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
+    background: var(--pure-pure, #FFF);
+    color: var(--blue-warm-vivid-blue-warm-vivid-70, #1351B4);
+    text-align: center;
+    font-family: Rawline;
+    font-size: 16.8px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    cursor: pointer;
+}
+
+.buttons{
+    display: flex;
+    gap: 15px;
+    width: 590px;
+    justify-content: flex-end;
+}

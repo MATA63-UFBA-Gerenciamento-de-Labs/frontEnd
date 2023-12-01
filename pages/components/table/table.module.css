@@ -1,6 +1,5 @@
 .header{
     display: flex;
-    padding-left: 48px;
     box-sizing: border-box;
     background: var(--gray-gray-05, #F0F0F0);
     

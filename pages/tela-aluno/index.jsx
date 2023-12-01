@@ -1,3 +1,4 @@
+import React, { useState } from 'react';
 import Header from '../components/topbar/topbar.jsx'
 import Input from '../components/input/input.jsx'
 import Lab  from '../components/lab/lab.jsx'
@@ -14,55 +15,110 @@ import back from '../assets/back.svg';
 import MainCard from '../components/mainCard/mainCard.jsx'
 import SideCard from '../components/sideCard/sideCard.jsx'
 
-export default function index(){
+var i = 10;
+function keys(){
+    return i++;
+}
 
+export default function index(){
+    const [matricula1, setMatricula1] = useState("");
+    const [codigoMateria1, setCodigoMateria1] = useState("");
+    const [lab1, setLab1] = useState("default");
+    const [turma1, setTurma1] = useState("default");
+    
+    const [matricula2, setMatricula2] = useState("");
+    const [lab2, setLab2] = useState("default");
+    const [periodo2, setPeriodo2] = useState("default");
+
+    const [matricula3, setMatricula3] = useState("");
+    const [codigoMateria3, setCodigoMateria3] = useState("");
+
+    
     var firstRow1 = [
-        <Input type={0} title={"Número de Matrícula"} placeholder={"Ex: 219116052"}/>,
-        <Input type={0} title={"Código da Matéria"} placeholder={"Ex: MATA00"}/>,
-        <Input type={1} title={"Laboratório"} placeholder={"Selecione a laboratório"}/>
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula1} onChange={(e) => setMatricula1(e.target.value)} key={1} id={1}/>,
+        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria1} onChange={(e) => setCodigoMateria1(e.target.value)}key={2} id={2}/>,
+        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab1} onChange={(e) => setLab1(e.target.value)}key={3} id={3}/>
     ]
-    var secondRow1 = [<Input type={1} title={"Turma"} placeholder={"Selecione a turma"}/>]
+    var secondRow1 = [<Input type={"dropdown"} title={"Turma"} placeholder={"Selecione a turma"} value={turma1} onChange={(e) => setTurma1(e.target.value)}key={4} id={4}/>]
     var buttons1 = [
         <Button
             text={"Limpar"}
             color={"white"}
-            onClick={()=>{}}
+            onClick={( )=>{ setMatricula1(""); setCodigoMateria1(""); setLab1("default"); setTurma1("default");}}
+            key={i++}
+            id={5}
         />,
         <Button
             text={"Confirmar"}
             color={"blue"}
-            onClick={()=>{}}
+            onClick={()=>{ 
+                        if (matricula1 && codigoMateria1 && lab1 && turma1)
+                            alert( `Pedido para aula feito com sucesso para ${matricula1} ${codigoMateria1} ${lab1} ${turma1}`)
+                        else
+                            alert("Preencha todos os campos")
+                    }}
+            key={i++}
+            id={6}
         />
     ]
 
     var firstRow2 = [
-        <Input type={0} title={"Número de Matrícula"} placeholder={"Ex: 219116052"}/>,
-        <Input type={1} title={"Laboratório"} placeholder={"Selecione a laboratório"}/>,
-        <Input type={1} title={"Período"} placeholder={"Selecione o período"}/>,
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula2} onChange={(e) => setMatricula2(e.target.value)}key={5} id={7}/>,
+        <Input type={"dropdown"} title={"Laboratório"} placeholder={"Selecione a laboratório"} value={lab2} onChange={(e) => setLab2(e.target.value)}key={6} id={8}/>,
+        <Input type={"dropdown"} title={"Período"} placeholder={"Selecione o período"} value={periodo2} onChange={(e) => setPeriodo2(e.target.value)}key={7} id={9}/>,
     ]
 
-    var firstRow3 =[
-        <Input type={0} title={"Número de Matrícula"} placeholder={"Ex: 219116052"}/>,
-        <Input type={0} title={"Código da Matéria"} placeholder={"Ex: MATA00"}/>,
+    var buttons2 = [
+        <Button
+            text={"Limpar"}
+            color={"white"}
+            onClick={( )=>{ setMatricula2(""); setLab2("default"); setPeriodo2("default");}}
+            key={i++}
+            id={10}
+        />,
         <Button
             text={"Confirmar"}
             color={"blue"}
-            onClick={()=>{}}
+            onClick={()=>{ 
+                        if( matricula2 && lab2 && periodo2 )
+                            alert( `Pedido para aula feito com sucesso para ${matricula2} ${lab2} ${periodo2}`)
+                        else
+                            alert("Preencha todos os campos")
+                    }}
+            key={i++}
+            id={11}
+        />
+    ]
+
+    var firstRow3 =[
+        <Input type={"text"} title={"Número de Matrícula"} placeholder={"Ex: 219116052"} value={matricula3} onChange={(e) => setMatricula3(e.target.value)} key={8} id={12}/>,
+        <Input type={"text"} title={"Código da Matéria"} placeholder={"Ex: MATA00"} value={codigoMateria3} onChange={(e) => setCodigoMateria3(e.target.value)}key={9} id={13}/>,
+        <Button
+            text={"Confirmar"}
+            color={"blue"}
+            onClick={()=>{ 
+                            if (matricula3 && codigoMateria3 )
+                                alert( `Pedido para nova tag feito com sucesso para ${matricula3} ${codigoMateria3}`)
+                            else
+                                alert("Preencha todos os campos")
+                        }}
+            key={i++}
+            id={14}
         />,
     ]
 
     var info1 =[
-        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"}/>,
-        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"}/>,
-        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"}/>,
-        <div style={{ height: "29px;"}}></div>,
+        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={i++}/>,
+        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={i++}/>,
+        <Lab clas={"MATA01"} days={["Seg,","Qua"]} hour={"16:40"} number={"Lab 101"} key={i++}/>,
+        <div style={{ height: "29px"}} key={i++}></div>,
     ]
 
     var info2 =[
-        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 01"}/>,
-        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 02"}/>,
-        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 03"}/>,
-        <div style={{ height: "64px;"}}></div>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 01"} key={i++}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 02"} key={i++}/>,
+        <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 03"} key={i++}/>,
+        <div style={{ height: "64px"}} key={i++}></div>,
     ]
     
     return(
@@ -87,7 +143,7 @@ export default function index(){
                         titleText={"Solicitar acesso a um laboratório de estudo"}
                         titleImage={<Image width={15} height={19} src={book} alt='book'/>}
                         firstRow={firstRow2}
-                        buttons={buttons1}
+                        buttons={buttons2}
                     />
                     <MainCard
                         titleText={"Solicitar nova tag"}
