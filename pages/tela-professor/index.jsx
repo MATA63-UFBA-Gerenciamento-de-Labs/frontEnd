@@ -14,6 +14,8 @@ import SideCard from '../components/sideCard/sideCard.jsx'
 import Action from '../components/action/action.jsx'
 import { useState } from 'react'
 
+import GrantAccessModal from '../components/modal/grantAccessModal.jsx'
+
 var i = 1;
 
 function keys(){
@@ -44,14 +46,34 @@ export default function index(){
         {id:11, selected:false, name:"Lorem ipsum Delorium Spert", num:"999999999", disci:"Lorem ipsum", lab:"11"},
     ]);
     
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     var actions = [
-        <Button
-            key={keys()}
+        // <Button
+        //     key={keys()}
+        //     text={"Fornecer Acesso"}
+        //     color={"blue"}
+        //     onClick={()=>{ addEntry( data, setData, params) }}
+        //     id={1}
+        // />
+        <Button 
+            onClick={openModal}
             text={"Fornecer Acesso"}
             color={"blue"}
-            onClick={()=>{ addEntry( data, setData, params) }}
             id={1}
-        />,
+        />, 
+        <GrantAccessModal 
+            isOpen={isModalOpen} 
+            onRequestClose={closeModal} 
+            />,
         <Button
             key={keys()}
             text={"Remover Acesso"}
