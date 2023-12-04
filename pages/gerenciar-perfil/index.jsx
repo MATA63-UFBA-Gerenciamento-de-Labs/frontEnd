@@ -36,6 +36,14 @@ const ProfileManagement = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(email !== confirmEmail){
+            alert("Emails não coincidem");
+            return;
+        }
+        if(password !== confirmPassword){
+            alert("Senhas não coincidem");
+            return;
+        }
         // Add your logic here to update the profile information
         alert("Integração com o backend");
     };
