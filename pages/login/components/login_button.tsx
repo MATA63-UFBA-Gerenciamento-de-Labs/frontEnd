@@ -38,7 +38,12 @@ function login(
 
       alert("Matrícula e/ou senha incorretas");
     })
-    .catch((_) => {
+    .catch((error) => {
+      const status = error.response.status;
+      if (status === 401) {
+        return alert("Matrícula e/ou senha incorretas");
+      }
+
       alert("Algum erro aconteceu. Por favor, tente novamente mais tarde.");
     });
 }
