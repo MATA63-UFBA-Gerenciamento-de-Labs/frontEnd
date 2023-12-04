@@ -73,10 +73,7 @@ function Login(): React.ReactElement {
         >
           Esqueceu a senha?
         </Button>
-        <LoginButton 
-          pass={pass} 
-          user={user} 
-        />
+        <LoginButton pass={pass} user={user} />
       </div>
       <FooterButtons />
     </div>
