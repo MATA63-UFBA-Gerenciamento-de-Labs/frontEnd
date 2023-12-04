@@ -14,6 +14,8 @@ function login(
   router: AppRouterInstance,
   setLoading: Function,
 ): void {
+  setLoading(true);
+
   const fullURL = `${baseURL}${loginPath
     .replace("{}", user)
     .replace("{}", pass)}`;
@@ -39,11 +41,12 @@ function login(
       alert("Matrícula e/ou senha incorretas");
     })
     .catch((error) => {
+      setLoading(false);
+
       const status = error.response.status;
       if (status === 401) {
         return alert("Matrícula e/ou senha incorretas");
       }
-
       alert("Algum erro aconteceu. Por favor, tente novamente mais tarde.");
     });
 }
