@@ -8,17 +8,19 @@ type LoginContentProps = {
   footer: string;
   icon: SvgIconComponent;
   placeholder: string;
-  setData: (value: string | ( (prevVar: string) => string ) ) => void;
+  setData: (value: string | ((prevVar: string) => string)) => void;
+  isPassword: boolean;
 };
 
 function LoginContent(props: LoginContentProps): React.ReactElement {
   props = {
-            label: props.label || "",
-            footer: props.footer || "",
-            icon: props.icon || Lock,
-            placeholder: props.placeholder || "",
-            setData: props.setData,
-          } 
+    label: props.label || "",
+    footer: props.footer || "",
+    icon: props.icon || Lock,
+    placeholder: props.placeholder || "",
+    setData: props.setData,
+    isPassword: props.isPassword || false,
+  };
   return (
     <div
       style={{
@@ -39,7 +41,12 @@ function LoginContent(props: LoginContentProps): React.ReactElement {
       >
         {props.label}
       </div>
-      <LoginInput icon={props.icon} placeholder={props.placeholder} setData={props.setData} />
+      <LoginInput
+        icon={props.icon}
+        placeholder={props.placeholder}
+        setData={props.setData}
+        isPassword={props.isPassword}
+      />
       <div
         style={{
           color: "black",

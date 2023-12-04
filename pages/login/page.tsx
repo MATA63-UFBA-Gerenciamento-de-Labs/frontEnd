@@ -50,6 +50,7 @@ function Login(): React.ReactElement {
           placeholder="Ex. 999 999 999 99"
           setData={setUser}
           icon={Person}
+          isPassword={false}
         />
         <div style={{ height: "24px" }}></div>
         <LoginContent
@@ -58,6 +59,7 @@ function Login(): React.ReactElement {
           placeholder=""
           setData={setPass}
           icon={Lock}
+          isPassword={true}
         />
         <Button
           sx={{
