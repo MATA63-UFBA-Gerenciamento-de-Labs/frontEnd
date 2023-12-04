@@ -1,32 +1,51 @@
-import { Button } from "@mui/material";
-import React from "react";
-import { useRouter } from 'next/navigation';
+import { Button, CircularProgress } from "@mui/material";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
+import axios from "axios";
 
-function login( user: string, pass:string, router: AppRouterInstance ): void{
-  
-  if( user[0] == "0" && user[1] == "0" && pass[0] == "0" && pass[1] == "0" ){
-    router.push("/tela-tecnico")
-    return
-  }
+const baseURL = "https://back-end-orcin-theta.vercel.app";
 
-  if( user[0] == "1"  && user[1] == "1" && pass[0] == "1" && pass[1] == "1"){
-    router.push("/tela-professor")
-    return
-  }
+const loginPath = "/login?cpf={}&password={}";
 
-  if( user[0] == "2" && user[1] == "2" && pass[0] == "2" && pass[1] == "2" ){
-    router.push("/tela-aluno")
-    return
-  }
+function login(
+  user: string,
+  pass: string,
+  router: AppRouterInstance,
+  setLoading: Function,
+): void {
+  const fullURL = `${baseURL}${loginPath
+    .replace("{}", user)
+    .replace("{}", pass)}`;
 
-  alert("Matrícula e/ou senha incorretas")
-  
+  axios
+    .get(fullURL)
+    .then((response) => {
+      setLoading(false);
+
+      const tipo = response.data.response.tipo;
+
+      if (tipo === "tecnico") {
+        return router.push("/tela-tecnico");
+      }
+      if (tipo === "aluno") {
+        return router.push("/tela-aluno");
+      }
+
+      if (tipo === "professor") {
+        return router.push("/tela-professor");
+      }
+
+      alert("Matrícula e/ou senha incorretas");
+    })
+    .catch((_) => {
+      alert("Algum erro aconteceu. Por favor, tente novamente mais tarde.");
+    });
 }
 
+const LoginButton = ({ user, pass }: { user: string; pass: string }) => {
+  const [loading, setLoading] = useState<boolean>(false);
 
-
-const LoginButton = ( { user, pass } : { user: string, pass: string }) => {
   const router = useRouter();
   const buttonStyle = {
     width: "384px",
@@ -48,7 +67,17 @@ const LoginButton = ( { user, pass } : { user: string, pass: string }) => {
     fontWeight: "600",
   };
 
-  return <Button style={buttonStyle} onClick={ () => login( user, pass, router ) }>Entrar</Button>;
+  return loading ? (
+    <CircularProgress></CircularProgress>
+  ) : (
+    <Button
+      style={buttonStyle}
+      onClick={() => login(user, pass, router, setLoading)}
+      disabled={loading}
+    >
+      Entrar
+    </Button>
+  );
 };
 
 export default LoginButton;
