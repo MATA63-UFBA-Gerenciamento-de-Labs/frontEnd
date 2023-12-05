@@ -6,6 +6,8 @@ import Lab from '../components/lab/lab.jsx'
 import Input from '../components/input/input.jsx'
 import UserModel from "../../utils/user_model"
 import { useRouter } from 'next/router';
+import {  CircularProgress } from "@mui/material";
+
 
 import styles from './telaGerenciamento.module.css'
 import axios from 'axios';
@@ -20,7 +22,7 @@ const ProfileManagement = () => {
   const router = useRouter();
 
 
-
+    const [loading, setLoading] = useState(false);
     const [name, setName] = useState(user?.name ?? "");
     const [email, setEmail] = useState(user?.email ?? "");
     const [confirmEmail, setConfirmEmail] = useState(user?.email ?? "");
@@ -70,14 +72,18 @@ const ProfileManagement = () => {
             return;
         }
 
+        setLoading(true);
+
         const userJson = user.toJson();
 
         axios.put(baseURL + path, userJson).then((response) => {
+          setLoading(false);
             if(response.status === 200){
                 alert("Dados atualizados com sucesso");
                 router.back();
             }
         }).catch((error) => {
+          setLoading(false);
             alert("Erro ao atualizar dados");
         });
        
@@ -139,10 +145,12 @@ const ProfileManagement = () => {
                 <br />          
 
             </form>
-            <div className={styles.buttons}>
+            {loading &&   <div className={styles.loadingContainer}> <CircularProgress></CircularProgress> </div>}
+            {!loading && (<div className={styles.buttons}>
                     <button onClick={handleGoBack} className={styles.buttonWhite}>Cancelar</button>
                     <button onClick={handleSubmit} type="submit" className={styles.buttonBlue}>Confirmar</button>
-                </div>
+                </div>)
+            }
         </div>
     );
 };
