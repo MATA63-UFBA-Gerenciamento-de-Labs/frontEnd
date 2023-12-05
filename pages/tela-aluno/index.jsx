@@ -14,6 +14,7 @@ import pc from '../assets/pc.svg';
 import back from '../assets/back.svg';
 import MainCard from '../components/mainCard/mainCard.jsx'
 import SideCard from '../components/sideCard/sideCard.jsx'
+import UserModel from "../../utils/user_model"
 
 var i = 10;
 function keys(){
@@ -32,6 +33,9 @@ export default function index(){
 
     const [matricula3, setMatricula3] = useState("");
     const [codigoMateria3, setCodigoMateria3] = useState("");
+
+    const user = new UserModel();
+    const name = user?.name ?? "aluno";
 
     
     var firstRow1 = [
@@ -120,6 +124,7 @@ export default function index(){
         <History date={"17/08/2021"} hour={"08h00"} text={"Acesso Realizado 03"} key={i++}/>,
         <div style={{ height: "64px"}} key={i++}></div>,
     ]
+
     
     return(
         
@@ -127,7 +132,7 @@ export default function index(){
 
             <Header/>
             
-            <h1 className={styles.title} >Olá, aluno</h1>
+            <h1 className={styles.title} >Olá, {name}</h1>
             <div className={styles.shadow}></div>
 
             <div className={styles.center}>

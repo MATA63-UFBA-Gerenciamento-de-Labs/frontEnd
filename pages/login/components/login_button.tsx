@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime";
 import axios from "axios";
+import UserModel from "../../../utils/user_model";
 
 const baseURL = "https://back-end-orcin-theta.vercel.app";
 
@@ -24,8 +25,15 @@ function login(
     .get(fullURL)
     .then((response) => {
       setLoading(false);
+      const responseData = response.data.response;
+      const tipo = responseData.tipo;
 
-      const tipo = response.data.response.tipo;
+      const responseStatus = response.status;
+
+      if (responseStatus === 200) {
+        const user = new UserModel();
+        user.updateFields(response.data.response);
+      }
 
       if (tipo === "tecnico") {
         return router.push("/tela-tecnico");

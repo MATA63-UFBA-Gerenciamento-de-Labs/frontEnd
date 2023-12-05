@@ -13,6 +13,7 @@ import styles from './telaProfessor.module.css'
 import SideCard from '../components/sideCard/sideCard.jsx'
 import Action from '../components/action/action.jsx'
 import { useState } from 'react'
+import UserModel from "../../utils/user_model"
 
 import GrantAccessModalProfessor from '../components/modal/grantAccessModalProfessor.jsx'
 
@@ -23,6 +24,10 @@ function keys(){
 }
 
 export default function index(){
+
+
+  const user = new UserModel();
+  const name = user?.name ?? "professor";
 
     var params = [
         {display:"check"},
@@ -121,7 +126,7 @@ export default function index(){
 
             <Header/>
             
-            <h1 className={styles.title} >Olá, professor</h1>
+            <h1 className={styles.title} >Olá, {name}</h1>
             <div className={styles.shadow}></div>
 
             <div className={styles.center}>
