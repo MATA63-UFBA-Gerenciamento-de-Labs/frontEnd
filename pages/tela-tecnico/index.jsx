@@ -12,6 +12,7 @@ import pen from '../assets/pen.svg'
 import prancheta from '../assets/prancheta.svg'
 import pc from '../assets/pc.svg';
 import styles from './telaTecnico.module.css'
+import UserModel from "../../utils/user_model"
 
 import GrantAccessModalTecnico from '../components/modal/grantAccessModalTecnico.jsx'
 import GrantTokenModalTecnico from '../components/modal/grantTokenModalTecnico.jsx'
@@ -22,7 +23,12 @@ function keys(){
     return i++;
 }
 
+
 export default function index(){
+
+
+  const user = new UserModel();
+  const name = user?.name ?? "técnico";
 
     const [isModalOpen1, setIsModalOpen1] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -183,7 +189,7 @@ export default function index(){
 
             <Header/>
             
-            <h1 className={styles.title} >Olá, técnico</h1>
+            <h1 className={styles.title} >Olá, {name}</h1>
             <div className={styles.shadow}></div>
 
         

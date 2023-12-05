@@ -4,22 +4,41 @@ import Header from '../components/topbar/topbar.jsx'
 import Table,{ deleteEntry, addEntry, editEntry, TODO } from '../components/table/table.jsx'
 import Lab from '../components/lab/lab.jsx'
 import Input from '../components/input/input.jsx'
+import UserModel from "../../utils/user_model"
+import { useRouter } from 'next/router';
 
 import styles from './telaGerenciamento.module.css'
+import axios from 'axios';
+
+const baseURL = "https://back-end-orcin-theta.vercel.app";
+const path = "/usuario/atualizar";
 
 const ProfileManagement = () => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [confirmEmail, setConfirmEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [confirmPassword, setConfirmPassword] = useState('');
+
+
+  const user = new UserModel();
+  const router = useRouter();
+
+
+
+    const [name, setName] = useState(user?.name ?? "");
+    const [email, setEmail] = useState(user?.email ?? "");
+    const [confirmEmail, setConfirmEmail] = useState(user?.email ?? "");
+    const [password, setPassword] = useState(user?.senha ?? "");
+    const [confirmPassword, setConfirmPassword] = useState(user?.senha ?? "");
+
+    const handleGoBack = () => {
+     router.back();
+    };
 
     const handleNameChange = (e) => {
         setName(e.target.value);
+        user.name = e.target.value;
     };
 
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
+        user.email = e.target.value;
     };
 
     const handleConfirmEmailChange = (e) => {
@@ -28,6 +47,7 @@ const ProfileManagement = () => {
 
     const handlePasswordChange = (e) => {
         setPassword(e.target.value);
+        user.senha = e.target.value;
     };
 
     const handleConfirmPasswordChange = (e) => {
@@ -44,8 +64,23 @@ const ProfileManagement = () => {
             alert("Senhas não coincidem");
             return;
         }
-        // Add your logic here to update the profile information
-        alert("Integração com o backend");
+
+        if( user === null){
+            alert("Erro ao atualizar dados");
+            return;
+        }
+
+        const userJson = user.toJson();
+
+        axios.put(baseURL + path, userJson).then((response) => {
+            if(response.status === 200){
+                alert("Dados atualizados com sucesso");
+                router.back();
+            }
+        }).catch((error) => {
+            alert("Erro ao atualizar dados");
+        });
+       
     };
 
     return (
@@ -56,8 +91,9 @@ const ProfileManagement = () => {
             <h1 className={styles.title} >Gerenciamento de Perfil</h1>
             <div className={styles.shadow}></div>
 
-            <form onSubmit={handleSubmit} className={styles.form}>
+            <form  className={styles.form}>
                 <Input 
+                value={name}
                     title="Name" 
                     type="text" 
                     placeholder={"Insira seu nome completo"} 
@@ -66,6 +102,7 @@ const ProfileManagement = () => {
                 />
                 <br />
                 <Input 
+                value={ email}
                     title="Email" 
                     type="text" 
                     placeholder={"Insira seu email"} 
@@ -74,6 +111,7 @@ const ProfileManagement = () => {
                 />
                 <br />
                 <Input
+                value={confirmEmail}
                     title="Confirm Email"
                     type="text"
                     placeholder={"Confirme seu email"}
@@ -82,6 +120,7 @@ const ProfileManagement = () => {
                 />
                 <br />
                 <Input
+                value={password}
                     title="Password"
                     type="text"
                     placeholder={"Insira nova senha"}
@@ -90,19 +129,20 @@ const ProfileManagement = () => {
                 />
                 <br />
                 <Input
+                value={confirmPassword}
                     title="Confirm Password"
                     type="text"
                     placeholder={"Confirme nova senha"}
                     onChange={handleConfirmPasswordChange}
                     width={"360"}
                 />
-                <br />
-                
-                <div className={styles.buttons}>
-                    <button className={styles.buttonWhite}>Cancelar</button>
-                    <button type="submit" className={styles.buttonBlue}>Confirmar</button>
-                </div>
+                <br />          
+
             </form>
+            <div className={styles.buttons}>
+                    <button onClick={handleGoBack} className={styles.buttonWhite}>Cancelar</button>
+                    <button onClick={handleSubmit} type="submit" className={styles.buttonBlue}>Confirmar</button>
+                </div>
         </div>
     );
 };
