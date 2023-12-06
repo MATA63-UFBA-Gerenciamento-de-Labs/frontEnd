@@ -13,6 +13,7 @@ import prancheta from '../assets/prancheta.svg'
 import pc from '../assets/pc.svg';
 import styles from './telaTecnico.module.css'
 import UserModel from "../../utils/user_model"
+import ProtectedRoute from '../../utils/protected_route.js';
 
 import GrantAccessModalTecnico from '../components/modal/grantAccessModalTecnico.jsx'
 import GrantTokenModalTecnico from '../components/modal/grantTokenModalTecnico.jsx'
@@ -184,7 +185,7 @@ export default function index(){
         />,
     ]
     return(
-        
+      <ProtectedRoute> 
         <div className="tela-professor">
 
             <Header/>
@@ -264,5 +265,6 @@ export default function index(){
 
             </div>
         </div>
+      </ProtectedRoute>
     )
 }

@@ -14,6 +14,7 @@ import SideCard from '../components/sideCard/sideCard.jsx'
 import Action from '../components/action/action.jsx'
 import { useState } from 'react'
 import UserModel from "../../utils/user_model"
+import ProtectedRoute from '../../utils/protected_route.js';
 
 import GrantAccessModalProfessor from '../components/modal/grantAccessModalProfessor.jsx'
 
@@ -121,6 +122,7 @@ export default function index(){
     ]
 
     return(
+      <ProtectedRoute>
         
         <div className="tela-professor">
 
@@ -162,5 +164,6 @@ export default function index(){
                 </div>
             </div>
         </div>
+      </ProtectedRoute>
     )
 }

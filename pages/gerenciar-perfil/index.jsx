@@ -11,6 +11,7 @@ import {  CircularProgress } from "@mui/material";
 
 import styles from './telaGerenciamento.module.css'
 import axios from 'axios';
+import ProtectedRoute from '../../utils/protected_route.js';
 
 const baseURL = "https://back-end-orcin-theta.vercel.app";
 const path = "/usuario/atualizar";
@@ -90,7 +91,8 @@ const ProfileManagement = () => {
     };
 
     return (
-        <div>
+      <ProtectedRoute>
+       <div>
             
             <Header/>
             
@@ -152,6 +154,8 @@ const ProfileManagement = () => {
                 </div>)
             }
         </div>
+      </ProtectedRoute>
+      
     );
 };
 

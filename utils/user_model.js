@@ -1,4 +1,3 @@
-// UserModel.js
 
 class UserModel {
   static instance = null;
@@ -11,6 +10,7 @@ class UserModel {
   cpf;
 
   constructor() {
+
     if (!UserModel.instance) {
       UserModel.instance = this;
     }
@@ -37,6 +37,10 @@ class UserModel {
       name: this.name,
       tipo: this.tipo,
     };
+  }
+
+   isAuthenticated(){
+    return  this.cpf !== undefined;
   }
 }
 

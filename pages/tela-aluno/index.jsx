@@ -15,6 +15,8 @@ import back from '../assets/back.svg';
 import MainCard from '../components/mainCard/mainCard.jsx'
 import SideCard from '../components/sideCard/sideCard.jsx'
 import UserModel from "../../utils/user_model"
+import ProtectedRoute from '../../utils/protected_route.js';
+
 
 var i = 10;
 function keys(){
@@ -127,7 +129,7 @@ export default function index(){
 
     
     return(
-        
+      <ProtectedRoute>
         <div className="tela-aluno">
 
             <Header/>
@@ -171,5 +173,6 @@ export default function index(){
                 </div>
             </div>
         </div>
+        </ProtectedRoute>
     )
 }
